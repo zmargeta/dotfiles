@@ -3,3 +3,5 @@
 	name = Željko Margeta
 [core]
 	editor = vim
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
