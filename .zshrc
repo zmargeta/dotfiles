@@ -19,7 +19,8 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme robbyrussell
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # Tell Antigen that you're done.
 antigen apply
