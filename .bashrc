@@ -116,6 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
+
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
