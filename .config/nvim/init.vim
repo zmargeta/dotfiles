@@ -1,6 +1,5 @@
 execute pathogen#infect()
+set number
 set noshowmode
 syntax on
-set background=dark
-colorscheme solarized
 filetype plugin indent on
