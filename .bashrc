@@ -120,7 +120,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
-export GOPATH="$HOME/go"
+export GOPATH="$HOME"
 export PATH="$GOPATH/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
