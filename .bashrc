@@ -116,6 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi

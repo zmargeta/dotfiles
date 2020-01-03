@@ -25,6 +25,10 @@ antigen bundle sindresorhus/pure
 # Tell Antigen that you're done.
 antigen apply
 
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
