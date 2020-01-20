@@ -4,8 +4,6 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/zmargeta/.gitignore_global
-[credential]
-	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
