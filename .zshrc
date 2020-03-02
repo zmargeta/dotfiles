@@ -16,7 +16,7 @@ antigen bundle sdk
 antigen bundle command-not-found
 
 # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zdharma/fast-syntax-highlighting
 
 # Load the theme.
 antigen bundle mafredri/zsh-async
