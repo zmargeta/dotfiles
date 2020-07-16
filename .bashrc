@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
+    source "/etc/profile.d/vte.sh"
 fi
 
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -129,6 +129,6 @@ export PATH="$GOPATH/bin:$PATH"
 [[ -s "/usr/local/bin/pyenv" ]] && eval "$(/usr/local/bin/pyenv init -)"
 export PATH="$HOME/.poetry/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
-[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && . "/usr/local/opt/nvm/nvm.sh"
-[[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && source "/usr/local/opt/nvm/nvm.sh"
+[[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]] && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 export PATH="$HOME/scripts:$PATH"

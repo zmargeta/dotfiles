@@ -34,7 +34,7 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
+    source "/etc/profile.d/vte.sh"
 fi
 
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -49,6 +49,4 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "/usr/local/opt/nvm/nvm.sh" ]] && source "/usr/local/opt/nvm/nvm.sh"
 [[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]] && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 export PATH="$HOME/scripts:$PATH"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -s "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
