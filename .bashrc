@@ -122,7 +122,7 @@ fi
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
- [[ -s "/usr/local/bin/jenv" ]] && eval "$(/usr/local/bin/jenv init -)"
+[[ -s "/usr/local/bin/jenv" ]] && eval "$(/usr/local/bin/jenv init -)"
 export GOPATH="$HOME/Development"
 export PATH="$GOPATH/bin:$PATH"
 [[ -s "/usr/local/bin/rbenv" ]] && eval "$(/usr/local/bin/rbenv init -)"
