@@ -4,3 +4,7 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/zmargeta/.gitignore_global
+[merge]
+	tool = vimdiff
+[mergetool "vimdiff"]
+	path = nvim
