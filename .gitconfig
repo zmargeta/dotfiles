@@ -4,9 +4,11 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/zmargeta/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[merge]
+	tool = vimdiff
+[mergetool "vimdiff"]
+	path = nvim
+[diff]
+	tool = vimdiff
+[difftool "vimdiff"]
+	path = nvim
