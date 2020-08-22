@@ -1,0 +1,1 @@
+/Users/zmargeta/.config/nvim
