@@ -47,3 +47,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/scripts:$PATH"
 (( ${+PURE_PROMPT} )) && P10K_CONFIG="p10k-pure" || P10K_CONFIG="p10k"
 [[ -s "$HOME/.$P10K_CONFIG.zsh" ]] && source "$HOME/.$P10K_CONFIG.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
