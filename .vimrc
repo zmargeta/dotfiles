@@ -1,1 +1,0 @@
-/Users/zmargeta/.config/nvim/init.vim
