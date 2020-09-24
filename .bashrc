@@ -137,5 +137,4 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ]] && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 [[ -s "/usr/local/bin/direnv" ]] && eval "$(/usr/local/bin/direnv hook zsh)"
 export PATH="$HOME/scripts:$PATH"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[[ -s "$HOME/.fzf.bash" ]] && source "$HOME/.fzf.bash"
