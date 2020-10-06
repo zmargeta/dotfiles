@@ -4,6 +4,7 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/zmargeta/.gitignore_global
+	pager = less -FRX
 [merge]
 	tool = vimdiff
 [mergetool "vimdiff"]
