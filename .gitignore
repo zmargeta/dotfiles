@@ -43,7 +43,6 @@
 .DS_*
 .Trash
 
-.Brewfile
 .fzf*
 .testcontainers*
 .viminfo
