@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 temp_dir=$(mktemp -d)
 
 installed="${temp_dir}/installed.txt"
@@ -17,3 +18,4 @@ for file_path in /Applications/*.app; do
         then HOMEBREW_NO_AUTO_UPDATE=1 brew cask install --force ${cask_name}
     fi
 done
+
