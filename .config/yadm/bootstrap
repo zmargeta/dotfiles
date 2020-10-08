@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+chsh -s $(which zsh)
+~/bin/apply-setup
+curl -s "https://get.sdkman.io?rcupdate=false" | bash
+
