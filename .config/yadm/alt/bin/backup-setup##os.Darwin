@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-cd ~
-brew bundle dump --force --global
-yadm encrypt
-yadm add .config/yadm/files.gpg
-yadm commit -m 'Update encypted files' 
-yadm push
-

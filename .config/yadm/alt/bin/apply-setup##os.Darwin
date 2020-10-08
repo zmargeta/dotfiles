@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+yadm pull
+yadm decrypt
+brew update
+brew upgrade
+brew bundle --global
+brew cleanup
+
