@@ -33,7 +33,7 @@ brew "poetry"
 brew "pyenv"
 brew "rbenv"
 brew "skaffold"
-brew "hashicorp/tap/terraform", link: false
+brew "hashicorp/tap/terraform"
 brew "terragrunt"
 brew "the_silver_searcher"
 brew "tldr"
