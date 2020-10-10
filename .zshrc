@@ -32,6 +32,9 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source "/etc/profile.d/vte.sh"
 fi
 
+GPG_TTY=$(tty)
+export GPG_TTY
+
 [[ -s "/usr/local/etc/profile.d/z.sh" ]] && source "/usr/local/etc/profile.d/z.sh"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
