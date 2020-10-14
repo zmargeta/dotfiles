@@ -4,6 +4,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export GPG_TTY=$TTY
+
 source "$HOME/antigen.zsh"
 
 antigen use oh-my-zsh
@@ -32,8 +34,12 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source "/etc/profile.d/vte.sh"
 fi
 
-GPG_TTY=$(tty)
-export GPG_TTY
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/curl/lib"
+export CPPFLAGS="-I/usr/local/opt/curl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
+
+export FPATH="/usr/local/opt/curl/share/zsh/site-functions:$FPATH"
 
 [[ -s "/usr/local/etc/profile.d/z.sh" ]] && source "/usr/local/etc/profile.d/z.sh"
 export SDKMAN_DIR="$HOME/.sdkman"
