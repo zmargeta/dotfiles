@@ -12,8 +12,8 @@ antigen bundle docker
 antigen bundle git
 antigen bundle git-flow
 antigen bundle gradle
-antigen bundle httpie
 antigen bundle mvn
+antigen bundle kubectl
 antigen bundle npm
 antigen bundle pip
 antigen bundle sdk
