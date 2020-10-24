@@ -1,24 +1,18 @@
-Dotfiles
-========
+= Dotfiles
 
 This repository contains various dotfiles and is setup to work on both MacOS and Linux.
 
 To setup a new machine run the following command (in this example a MacOS machine):
 
-```bash
-$> bash -c "$(curl -fsSL https://raw.githubusercontent.com/zmargeta/dotfiles/master/bin/setup-macos")
-```
+ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/zmargeta/dotfiles/master/bin/setup-macos")
+
 
 This will install the prerequisites (i.e. `homebrew`, `yadm`, `zsh` and `gpg` on a MacOS machine).
 
 To save the current setup run the following script:
 
-```zsh
-$> update-setup
-```
+ $ update-setup
 
 And to apply it run:
 
-```zsh
-$> apply-setup
-```
+ $ apply-setup
