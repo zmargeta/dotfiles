@@ -34,6 +34,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source "/etc/profile.d/vte.sh"
 fi
 
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/curl/lib"
 export CPPFLAGS="-I/usr/local/opt/curl/include"
