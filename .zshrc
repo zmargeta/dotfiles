@@ -34,6 +34,8 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source "/etc/profile.d/vte.sh"
 fi
 
+export DOCKER_HOST="ssh://ubuntu@docker.internal"
+
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/curl/lib"
