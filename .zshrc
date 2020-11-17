@@ -63,4 +63,3 @@ export PATH="$HOME/.local/bin:$PATH"
 (( ${+PURE_PROMPT} )) && P10K_CONFIG="p10k-pure" || P10K_CONFIG="p10k"
 [[ -s "$HOME/.$P10K_CONFIG.zsh" ]] && source "$HOME/.$P10K_CONFIG.zsh"
 [[ -s "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"
-
