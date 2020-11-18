@@ -793,7 +793,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>586 546 620 392 0 0 1792 1120 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>163 155 1410 866 0 0 1792 1095 </string>
+	<string>163 138 1410 883 0 0 1792 1095 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>228 56 1410 842 0 0 1792 1097 </string>
 	<key>New Bookmarks</key>
@@ -1709,7 +1709,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>EAF247DC-669C-4221-803D-1DEBDC691052</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>135</integer>
+	<integer>136</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2516,7 +2516,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-11-17T07:21:05Z</date>
+	<date>2020-11-18T13:26:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -2544,7 +2544,7 @@
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>TabsHaveCloseButton</key>
