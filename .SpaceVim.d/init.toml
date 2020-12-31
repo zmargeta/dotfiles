@@ -1,6 +1,6 @@
 [options]
-colorscheme = "NeoSolarized"
-colorscheme_bg = "dark"
+colorscheme = "one"
+colorscheme_bg = "light"
 enable_guicolors = true
 statusline_separator = "arrow"
 statusline_inactive_separator = "arrow"
