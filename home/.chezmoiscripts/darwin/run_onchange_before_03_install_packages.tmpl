@@ -1,0 +1,229 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+source "${HOME}/.local/share/chezmoi/lib/libcore.sh"
+source "${HOME}/.local/share/chezmoi/lib/libdarwin.sh"
+
+trap '(exit 130)' INT
+trap '(exit 143)' TERM
+trap 'rc=$?; handler $rc; exit $rc' EXIT
+
+readonly DOT_TEMPDIR="$(mktemp -d)"
+readonly DOT_LOGFILE="$(mktemp /tmp/install_packages_log.XXXXXX)"
+readonly BREWFILE="${DOT_TEMPDIR}/Brewfile"
+
+main() {
+  tput civis
+  if ! find_homebrew; then
+    fail 'Failed to install packages, Homebrew not found'
+    return 1
+  fi
+  if ! create_brewfile; then
+    return 1
+  fi
+  if ! install_bundle; then
+    return 1
+  fi
+  if [[ -f "${HOME}/.local/bin/chezmoi" ]]; then
+    rm "${HOME}/.local/bin/chezmoi"
+  fi
+  if ! check_cleanup; then
+    return 1
+  fi
+  tput cnorm
+}
+
+install_bundle() {
+  DOT_WAIT_FLT=1 wait_strt 'Installing packages via Homebrew'
+  "${DOT_HOMEBREW}" bundle check --file "${BREWFILE}" >> "${DOT_LOGFILE}" 2>&1
+  local rc=$?
+  if (( $rc == 0 )); then
+    DOT_WAIT_FLT=1 wait_succ 'Installing packages via Homebrew, done'
+    return 0
+  fi
+  "${DOT_HOMEBREW}" bundle install --no-lock --file "${BREWFILE}" >> "${DOT_LOGFILE}" 2>&1
+  rc=$?
+  case $rc in
+    0) DOT_WAIT_FLT=1 wait_succ 'Installing packages via Homebrew, done' ;;
+    *) DOT_WAIT_FLT=1 wait_fail 'Installing packages via Homebrew, failed'; return $rc ;;
+  esac
+}
+
+check_cleanup() {
+  if ! cnfm 'Remove non-listed packages?'; then
+    return 0
+  fi
+  if [[ ! -f "${BREWFILE}" ]]; then
+    log "Failed to remove non-listed packages, ${BREWFILE} not found"
+    return 1
+  fi
+  DOT_WAIT_FLT=1 wait_strt 'Removing non-listed packages'
+  "${DOT_HOMEBREW}" bundle cleanup --force --zap --file "${BREWFILE}" >> "${DOT_LOGFILE}" 2>&1
+  local rc=$?
+  case $rc in
+    0) DOT_WAIT_FLT=1 wait_succ 'Removing non-listed packages, done' ;;
+    *) DOT_WAIT_FLT=1 wait_fail 'Removing non-listed packages, failed'; return $rc ;;
+  esac
+}
+
+{{- $taps := list
+    "adevinta/homebrew-zoe"
+    "buildpacks/tap"
+    "homebrew/bundle"
+    "homebrew/cask-fonts"
+    "homebrew/cask-versions"
+    "homebrew/services"
+    "spring-io/tap"
+    "sscotth/monoid"
+    "txn2/tap"
+    "quarkusio/tap" }}
+
+{{- if not .personal }}
+{{- $taps = concat $taps (list
+    "azure/kubelogin") }}
+{{- end }}
+
+{{- $brews := list
+    "asdf"
+    "awscli"
+    "azcopy"
+    "azure-cli"
+    "bat"
+    "bazelisk"
+    "buildifier"
+    "checkov"
+    "chezmoi"
+    "colima"
+    "curl"
+    "dash"
+    "difftastic"
+    "direnv"
+    "dive"
+    "docker"
+    "docker-buildx"
+    "docker-compose"
+    "eza"
+    "fd"
+    "fish"
+    "fortune"
+    "fzf"
+    "gh"
+    "git"
+    "grpcurl"
+    "helm"
+    "hey"
+    "httpie"
+    "istioctl"
+    "jq"
+    "k9s"
+    "kubectl"
+    "kubefwd"
+    "lima"
+    "macchina"
+    "mas"
+    "micronaut"
+    "neovim"
+    "pack"
+    "pnpm"
+    "poetry"
+    "pumba"
+    "quarkus"
+    "ripgrep"
+    "sd"
+    "skaffold"
+    "skopeo"
+    "spring-boot"
+    "starship"
+    "subversion"
+    "tealdeer"
+    "terraform"
+    "thefuck"
+    "tokei"
+    "vivid"
+    "wget"
+    "yq"
+    "zoe"
+    "zoxide" }}
+
+{{- if not .personal }}
+{{- $brews = concat $brews (list
+    "ansible"
+    "kubelogin") }}
+{{- end }}
+
+{{- $casks := list
+    "1password-cli"
+    "brave-browser"
+    "font-exo"
+    "font-fira-code"
+    "font-ibm-plex"
+    "font-inter"
+    "font-jetbrains-mono"
+    "font-lato"
+    "font-lekton"
+    "font-merriweather"
+    "font-merriweather-sans"
+    "font-monaspace"
+    "font-monoid-dollar-l"
+    "font-montserrat"
+    "font-overpass"
+    "font-overpass-mono"
+    "font-pt-mono"
+    "font-pt-sans"
+    "font-pt-sans-caption"
+    "font-pt-sans-narrow"
+    "font-symbols-only-nerd-font"
+    "font-ubuntu-mono"
+    "font-victor-mono"
+    "google-cloud-sdk"
+    "grammarly-desktop"
+    "hyperkey"
+    "jetbrains-toolbox"
+    "kitty"
+    "obsidian"
+    "raindropio"
+    "raycast"
+    "todoist" }}
+
+{{- if .personal }}
+{{- $casks = concat $casks (list
+    "kicad"
+    "kindle"
+    "prusaslicer") }}
+{{- else }}
+{{- $casks = concat $casks (list
+    "microsoft-azure-storage-explorer"
+    "postman"
+    "zoom") }}
+{{- end }}
+
+{{- $mas := dict
+    "1Password for Safari" "id: 1569813296"
+    "AdGuard for Safari" "id: 1440147259"
+    "Gifsky" "id: 1351639930"
+    "Keynote" "id: 409183694"
+    "Numbers" "id: 409203825"
+    "Pages" "id: 409201541"
+    "Save to Raindrop.io" "id: 1549370672" }}
+
+{{- if .personal }}
+{{- $mas = merge $mas (dict
+    "DaVinci Resolve" "id: 571213070"
+    "Fantastical" "id: 975937182"
+    "iMovie" "id: 408981434"
+    "SnippetsLab" "id: 1006087419") }}
+{{- else }}
+{{- $mas = merge $mas (dict
+    "Hidden Bar" "id: 1452453066") }}
+{{- end }}
+
+create_brewfile() {
+  echo -e '
+  {{- range ($taps | sortAlpha | uniq) -}}tap "{{ . }}"\n{{- end -}}
+  {{- range ($brews | sortAlpha | uniq) -}}brew "{{ . }}"\n{{- end -}}
+  {{- range ($casks | sortAlpha | uniq) -}}cask "{{ . }}"\n{{- end -}}
+  {{- range (keys $mas | sortAlpha | uniq) -}}mas "{{ . }}", {{ get $mas . }}\n{{- end -}}' > "${BREWFILE}" 2> "${DOT_LOGFILE}"
+}
+
+main "$@"
+{{- end -}}

@@ -1,0 +1,10 @@
+{{- $personal := promptBoolOnce . "personal" "Is this a personal machine" }}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+
+[data]
+personal = {{ $personal }}
+email = {{ $email | quote }}
+
+[diff]
+pager = "less -FRX"
+

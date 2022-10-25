@@ -1,0 +1,191 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+source "${HOME}/.local/share/chezmoi/lib/libcore.sh"
+source "${HOME}/.local/share/chezmoi/lib/libdarwin.sh"
+
+trap '(exit 130)' INT
+trap '(exit 143)' TERM
+trap 'rc=$?; handler $rc; exit $rc' EXIT
+
+readonly SCRIPT_URL='https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh'
+readonly DOT_TEMPDIR="$(mktemp -d)"
+readonly DOT_LOGFILE="$(mktemp /tmp/install_package_manager_log.XXXXXX)"
+
+main() {
+  tput civis
+  readonly HOMEBREW_PREFIX="$(get_homebrew_prefix)"
+  if ! install_homebrew; then
+    return 1
+  fi
+  if ! check_env_paths; then
+    return 1
+  fi
+  tput cnorm
+}
+
+install_homebrew() {
+  if [[ "$(command -v brew)" ]] || [[ -f "${HOMEBREW_PREFIX}/bin/brew" ]]; then
+    succ 'Skipping installation, Homebrew is already installed'
+    return 0
+  fi
+  wait_strt 'Downloading Homebrew install script'
+  http_file "${SCRIPT_URL}" "${DOT_TEMPDIR}/install.sh"
+  local rc=$?
+  case $rc in
+    0) wait_succ 'Downloading Homebrew install script, done' ;;
+    *) wait_fail 'Downloading Homebrew install script, failed'; return $rc ;;
+  esac
+  DOT_WAIT_FLT=1 wait_strt 'Executing Homebrew install script'
+  /bin/bash "${DOT_TEMPDIR}/install.sh" >> "${DOT_LOGFILE}" 2>&1
+  rc=$?
+  case $rc in
+    0) DOT_WAIT_FLT=1 wait_succ 'Executing Homebrew install script, done' ;;
+    *) DOT_WAIT_FLT=1 wait_fail 'Executing Homebrew install script, failed'; return $rc ;;
+  esac
+}
+
+check_env_paths() {
+  local readonly bin_path="${HOMEBREW_PREFIX}/bin"
+  local readonly sbin_path="${HOMEBREW_PREFIX}/sbin"
+  local readonly man_path="${HOMEBREW_PREFIX}/share/man"
+  local paths=()
+  local manpaths=()
+  info "Checking PATH for ${bin_path}"
+  check_path "${PATH}" "${bin_path}"
+  case $? in
+    0) cpln; succ "Checking PATH for ${bin_path}, done" ;;
+    *)
+      cpln; fail "Checking PATH for ${bin_path}, failed"
+      if cnfm "Add ${bin_path} to PATH?"; then
+        paths+=("${bin_path}")
+      fi
+      ;;
+  esac
+  info "Checking PATH for ${sbin_path}"
+  check_path "${PATH}" "${sbin_path}"
+  case $? in
+    0) cpln; succ "Checking PATH for ${sbin_path}, done" ;;
+    *)
+      cpln; fail "Checking PATH for ${sbin_path}, failed"
+      if cnfm "Add ${sbin_path} to PATH?"; then
+        paths+=("${sbin_path}")
+      fi
+      ;;
+  esac
+  info "Checking MANPATH for ${man_path}"
+  check_path "${MANPATH}" "${man_path}"
+  case $? in
+    0) cpln; succ "Checking MANPATH for ${man_path}, done" ;;
+    *)
+      cpln; fail "Checking MANPATH for ${man_path}, failed"
+      if cnfm "Append ${man_path} to MANPATH?"; then
+        manpaths+=("${man_path}")
+      fi
+      ;;
+  esac
+  if ! add_posix_paths "${HOME}/.bash_profile" paths[@] manpaths[@]; then
+    return 1
+  fi
+  if ! add_posix_paths "${HOME}/.zprofile" paths[@] manpaths[@]; then
+    return 1
+  fi
+  if ! add_fish_paths "${HOME}/.config/fish/conf.d/00_autogen.fish" paths[@] manpaths[@]; then
+    return 1
+  fi
+}
+
+check_path() {
+  [[ "$1" =~ $2|$2:.*|.*:$2|.*:$2:.* ]]
+}
+
+add_posix_paths() {
+  local readoly profile="$1"
+  local readonly paths=("${!2}")
+  local readonly manpaths=("${!3}")
+  local stms=()
+  if (( ${#paths[@]} > 0 )); then
+    stms+=("export PATH=\"$(concat_paths paths[@])\${PATH+:\$PATH}\"")
+  fi
+  if (( ${#manpaths[@]} > 0 )); then
+    stms+=("export MANPATH=\"$(concat_paths manpaths[@])\${MANPATH+:\$MANPATH}:\"")
+  fi
+  if (( ${#stms[@]} > 0 )); then
+    info "Updating ${profile}"
+    prepend_file "${profile}" stms[@]
+    case $? in
+      0) cpln; succ "Updating ${profile}, done" ;;
+      *) cpln; fail "Updating ${profile}, failed"; return 1 ;;
+    esac
+  fi
+}
+
+add_fish_paths() {
+  local readonly profile="$1"
+  local readonly paths=("${!2}")
+  local readonly manpaths=("${!3}")
+  local stms=()
+  if (( ${#paths[@]} > 0 )); then
+    local i
+    for (( i=${#paths[@]} - 1; i >= 0; i-- )); do
+      stms+=("fish_add_path -g ${paths[$i]}")
+    done
+  fi
+  if (( ${#manpaths[@]} > 0 )); then
+    local i
+    stms+=("set -q MANPATH; or set MANPATH :")
+    for (( i=${#manpaths[@]} - 1; i >= 0; i-- )); do
+      local stm="$(printf '%s\n%s\n%s\n%s\n%s\n%s\n%s' \
+          'for i in (seq 1 (count $MANPATH))' \
+          "  if test \$MANPATH[\$i] = ${manpaths[$i]}" \
+          '    set -e MANPATH[$i]' \
+          '    break' \
+          '  end' \
+          'end' \
+          "set -gx MANPATH ${manpaths[$i]} \$MANPATH")"
+      stms+=("${stm}")
+    done
+  fi
+  if (( ${#stms[@]} > 0 )); then
+    info "Updating ${profile}"
+    prepend_file "${profile}" stms[@]
+    case $? in
+      0) cpln; succ "Updating ${profile}, done" ;;
+      *) cpln; fail "Updating ${profile}, failed"; return 1 ;;
+    esac
+  fi
+}
+
+concat_paths() {
+  local IFS=':'
+  local readonly paths=("${!1}")
+  printf '%s' "${paths[*]}"
+}
+
+prepend_file() {
+  local readonly file_name="$1"
+  local readonly stms=("${!2}")
+  local readonly parent_dir="$(dirname "${file_name}")"
+  shift 1
+  if [[ ! -d "${parent_dir}" ]] && ! /bin/mkdir -p "${parent_dir}" >> "${DOT_LOGFILE}" 2>&1; then
+    log "Failed to create directory ${parent_dir}"
+    return 1
+  fi
+  if [[ ! -f "${file_name}" ]]; then
+    format_block stms[@] > "${file_name}"
+  elif cp -n "${file_name}" "${file_name}.bak" >> "${DOT_LOGFILE}" 2>&1; then
+    format_block stms[@] | cat - "${file_name}.bak" > "${file_name}" 2>> "${DOT_LOGFILE}"
+  else
+    log "Failed to copy ${file_name} to ${file_name}.bak, target file already exists"
+    return 1
+  fi
+}
+
+format_block() {
+  local IFS=$'\n'
+  local readonly stms=("${!1}")
+  printf '# Dotfiles auto-generated content (do not remove unless you know what you''re doing)\n%s\n\n' "${stms[*]}"
+}
+
+main "$@"
+{{- end -}}

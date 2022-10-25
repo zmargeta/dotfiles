@@ -1,0 +1,2 @@
+Host *
+  IdentityAgent "~/.config/op/agent.sock"

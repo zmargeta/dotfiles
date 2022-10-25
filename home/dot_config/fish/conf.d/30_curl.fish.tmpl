@@ -1,0 +1,9 @@
+{{- if eq .chezmoi.os "darwin" }}
+if type -q curl
+  if type -q brew
+    set -l prefix = (brew --prefix curl)
+    fish_add_path -g $prefix/bin
+    set -gx PKG_CONFIG_PATH "$prefix/lib/pkgconfig"
+  end
+end
+{{- end }}
