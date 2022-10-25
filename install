@@ -1,0 +1,120 @@
+#!/bin/bash 
+
+readonly DOT_TEMPDIR="$(mktemp -d)"
+readonly DOT_LOGFILE="$(mktemp /tmp/install_dotfiles_log.XXXXXX)"
+readonly CHEZMOI_URL='https://get.chezmoi.io'
+readonly LIBCORE_URL='https://raw.githubusercontent.com/zmargeta/dotfiles/main/lib/libcore.sh'
+
+init() {
+  local rc=0
+  printf '\x1B[1;34m→\x1B[0m %s\n' 'Downloading libcore'
+  if [[ "$(command -v curl)" ]]; then
+    curl -fsL -o "${DOT_TEMPDIR}/libcore.sh" "${LIBCORE_URL}" >> "${DOT_LOGFILE}" 2>&1
+  elif [[ "$(command -v wget)" ]]; then
+    wget -q -O "${DOT_TEMPDIR}/libcore.sh" "${LIBCORE_URL}" >> "${DOT_LOGFILE}" 2>&1
+  fi
+  if (( $? != 0 )); then
+    printf '\x1B[1F\x1B[2K\x1B[1;31m→\x1B[0m %s\n' 'Downloading libcore, failed (cURL or Wget not found)'
+    return 1
+  fi
+  printf '\x1B[1F\x1B[2K\x1B[1;32m→\x1B[0m %s\n' 'Downloading libcore, done'
+  source "${DOT_TEMPDIR}/libcore.sh"
+  trap '(exit 130)' INT
+  trap '(exit 143)' TERM
+  trap 'rc=$?; handler $rc; exit $rc' EXIT
+}
+
+install_prereqs() {
+  local os_name="$(uname -s)"
+  case "${os_name}" in
+    Darwin*) install_darwin_rereqs ;;
+    *) ;;
+  esac
+}
+
+install_darwin_rereqs() {
+  if ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]]; then
+    wait_strt 'Installing Xcode Command Line Tools'
+    xcode-select --install
+    if (( $? != 0 )); then
+      wait_fail 'Installing Xcode Command Line Tools, failed'
+      return 1
+    fi
+    wait_succ 'Installing Xcode Command Line Tools, done'
+  fi
+}
+
+config_sudo_auth() {
+  local os_name="$(uname -s)" 
+  case "${os_name}" in
+    Darwin*) config_tid_auth ;;
+    *) fail "Failed to configure biometric sudo authentication (${os_name} not supported)" ;;
+  esac
+  return 0
+}
+
+config_tid_auth() {
+  if [[ ! "$(command -v sed)" ]]; then
+    fail 'Failed to configure Touch ID sudo authentication (sed not found)'
+    return 1
+  fi
+  local entry="$(cat /etc/pam.d/sudo | sed -e '/^[ \t]*#/d' | sed -n '1p')"
+  if [[ "${entry}" =~ ^auth[[:blank:]]+sufficient[[:blank:]]+pam_tid.so$ ]]; then
+    succ 'Skipping biometric sudo authentication configuration, Touch ID is allready enabled'
+    return 0
+  fi
+  sed '/^[ \t]*#/a\
+auth       sufficient     pam_tid.so\
+' /etc/pam.d/sudo | sudo tee /etc/pam.d/sudo > /dev/null 2>&1
+  sudo -k
+  succ 'Configured Touch ID sudo autnentication'
+}
+
+install_chezmoi() {
+  if [[ "$(command -v chezmoi)" ]]; then
+    succ 'Skipping installation, chezmoi is already installed'
+    readonly CHEZMOI="$(command -v chezmoi)"
+    return 0
+  fi
+  wait_strt 'Downloading chezmoi install script'
+  http_file "${CHEZMOI_URL}" "${DOT_TEMPDIR}/chezmoi"
+  case $? in
+    0) wait_succ 'Downloading chezmoi install script, done' ;;
+    *) wait_fail 'Downloading chezmoi instal script, failed'; return 1 ;;
+  esac
+  local install_dir="${HOME}/.local/bin"
+  DOT_WAIT_FLT=1 wait_strt 'Executing chezmoi install script'
+  /bin/bash "${DOT_TEMPDIR}/chezmoi" -b "${install_dir}" >> "${DOT_LOGFILE}" 2>&1
+  readonly CHEZMOI="${install_dir}/chezmoi"
+  case $? in
+    0) DOT_WAIT_FLT=1 wait_succ 'Executing chezmoi install script, done' ;;
+    *) DOT_WAIT_FLT=1 wait_fail 'Executing chezmoi install script, failed'; return 1 ;;
+  esac
+}
+
+apply_dotfiles() {
+  "${CHEZMOI}" init --ssh --apply zmargeta
+}
+
+main() {
+  if ! init; then
+    return 1
+  fi
+  if ! config_sudo_auth; then
+    return 1
+  fi
+  if !install_prereqs; then
+    return 1
+  fi
+  tput civis
+  if ! install_chezmoi; then
+    return 1
+  fi
+  if ! apply_dotfiles; then
+    return 1
+  fi
+  tput cnorm
+}
+
+main "$@"
+

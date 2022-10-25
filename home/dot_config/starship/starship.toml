@@ -1,0 +1,224 @@
+format = """
+(($aws )($gcloud )($kubernetes )in )\
+($directory )\
+($git_branch( $git_commit)( $git_state)$git_status )\
+($scala )\
+($kotlin )\
+($java )\
+($elixir )\
+($rust )\
+($golang )\
+($ruby )\
+($nodejs )\
+($helm )\
+($cmd_duration )\
+($battery )\
+$line_break\
+($jobs )\
+($container )\
+$character"""
+
+command_timeout = 1000
+add_newline = false
+
+[aws]
+disabled = true
+format = 'on [$symbol( $profile)( \($region\))]($style)'
+style = 'yellow'
+symbol = 'aws'
+
+[gcloud]
+disabled = true
+format = 'on [$symbol( ($account(@$domain))( \($region\)))]($style)'
+style = 'yellow'
+symbol = 'gcp'
+
+[kubernetes]
+detect_files = [ 'Tiltfile', 'skaffold.yaml', 'skaffold.yml' ]
+disabled = false
+format = 'on [$symbol( \($context(:$namespace)\))]($style)'
+style = 'yellow'
+symbol = 'k8s'
+
+[directory]
+fish_style_pwd_dir_length = 1
+format = '[$path]($style)[( $read_only)]($read_only_style)'
+home_symbol = '~'
+read_only = '⚷'
+read_only_style = 'bright-black'
+repo_root_format = '[$repo_root]($repo_root_style)[$path]($style)[( $read_only)]($read_only_style)'
+repo_root_style = 'blue underline'
+style = 'blue'
+truncate_to_repo = true
+truncation_symbol = '../'
+
+[directory.substitutions]
+
+[git_branch]
+format = 'on [$symbol]($style) [$branch(:$remote_branch)]($style underline)'
+style = 'cyan'
+symbol = ''
+
+[git_commit]
+format = '[($tag:)$hash]($style)'
+style = 'bright-black'
+tag_symbol = '@'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\)'
+style = 'bright-black'
+
+[git_status]
+ahead = '[](green)'
+behind = '[](blue)'
+conflicted = '​'
+deleted = '​'
+diverged = '[](blue) [](green)'
+format = '[[(°$conflicted$untracked$modified$staged$renamed$deleted)](dimmed cyan)( $ahead_behind)( $stashed)]($style)'
+modified = '​'
+renamed = '​'
+staged = '​'
+stashed = '≡'
+style = 'bright-black'
+untracked = '​'
+up_to_date = ''
+
+[scala]
+detect_extensions = [ 'scala', 'sc' ]
+detect_files = [ 'build.sbt' ]
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'scala'
+version_format = '$raw'
+
+[kotlin]
+detect_extensions = [ 'kt', 'kts' ]
+detect_files = [ 'build.gradle.kts' ]
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'kt'
+version_format = '$raw'
+
+[java]
+detect_extensions = [ 'java' ]
+detect_files = [
+  'pom.xml',
+  'build.gradle',
+  'build.gradle.kts',
+  'build.sbt',
+  'project.clj'
+]
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'java'
+version_format = '$raw'
+
+[elixir]
+detect_files = [ 'mix.exs' ]
+detect_extensions = [ 'ex', 'exs']
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'ex'
+version_format = '$raw'
+
+[rust]
+detect_extensions = [ 'rs' ]
+detect_files = [ 'Cargo.toml' ]
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'rs'
+version_format = '$raw'
+
+[golang]
+detect_extensions = [ 'go' ]
+detect_files = [
+  'go.mod',
+  'go.sum',
+  'go.work',
+  'glide.yaml',
+  'Gopkg.yml',
+  'Gopkg.lock'
+]
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'go'
+version_format = '$raw'
+
+[python]
+detect_extensions = [ 'py' ]
+detect_files = [
+  'Pipfile',
+  '__init__.py',
+  'pyproject.toml',
+  'requirements.txt',
+  'setup.py',
+  'tox.ini'
+]
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'py'
+version_format = '$raw'
+
+[ruby]
+detect_extensions = [ 'rb' ]
+detect_files = [ 'Gemfile' ]
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'rb'
+version_format = '$raw'
+
+[nodejs]
+detect_extensions = []
+detect_files = [ 'package.json' ]
+detect_folders = [ 'node_modules' ]
+format = 'via [$symbol( $version)]($style)'
+not_capable_style = 'bright-purple dimmed'
+style = 'bright-purple'
+symbol = 'nodejs'
+version_format = '$raw'
+
+[helm]
+detect_files = [ 'helmfile.yaml', 'helmfile.yml', 'Chart.yaml', 'Chart.yml' ]
+format = 'via [$symbol( $version)]($style)'
+style = 'bright-purple'
+symbol = 'helm'
+version_format = '$raw'
+
+[cmd_duration]
+format = 'took [$duration]($style)'
+style = 'yellow'
+
+[jobs]
+format = '[$symbol$number]($style)'
+style = 'blue'
+symbol = '⚹'
+
+[battery]
+charging_symbol = ' '
+discharging_symbol = ' '
+format = '[$symbol]($style)'
+
+  [[battery.display]]
+  discharging_symbol = ' '
+  style = 'dimmed red'
+  threshold = 20
+
+  [[battery.display]]
+  discharging_symbol = ' '
+  style = 'dimmed yellow'
+  threshold = 40
+
+[container]
+format = '[$symbol( $name)]($style)'
+style = 'bright-black'
+symbol = '⌘'
+
+[character]
+error_symbol = '[ ](red)'
+success_symbol = '[ ](white)'
+vimcmd_symbol = '[ ](blue)'
+vimcmd_replace_one_symbol = '[ ](blue)'
+vimcmd_visual_symbol = '[ ](blue)'
+
+[time]
+disabled = false

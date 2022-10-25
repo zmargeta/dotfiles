@@ -1,0 +1,91 @@
+[user]
+email = {{ .email | quote }}
+name = "Željko Margeta"
+
+[init]
+defaultbranch = "main"
+
+[core]
+pager = "less -FRX"
+excludesfile = "{{ .chezmoi.homeDir }}/.config/git/ignore"
+
+[alias]
+a = add
+aa = add --all
+ap = add --patch
+app = apply
+appt = apply --3way
+au = add --update
+av = add --verbose
+b = branch
+ba = branch --all
+bd = branch --delete
+bdd = branch --delete --force
+bl = blame -b -w
+bm = branch -m
+br = branch --remote
+c = commit --verbose
+c- = commit --verbose --amend
+ca = commit --verbose --all
+ca- = commit --verbose --all --amend
+cam = commit --all --message
+can- = commit --verbose --all --amend --no-edit
+cl = clone --recurse-submodules
+cm = commit --message
+cn- = commit --verbose --amend --no-edit
+co = checkout
+cor = checkout --recurse-submodules
+cp = cherry-pick
+cpa = cherry-pick --abort
+cpc = cherry-pick --continue
+d = diff
+dc = diff --cached
+ds = diff --staged
+dt = diff-tree --no-commit-id --name-only -r
+f = fetch
+fp = fetch --prune
+fpt = fetch --prune-tags
+l = log --stat
+lg = log --graph
+lga = log --graph --decorate --all
+lgo = log --graph --oneline --decorate
+lgoa = log --graph --oneline --decorate --all
+lo = log --one-line --decorate
+m = merge
+ma = merge --abort
+mc = merge --continue
+p = push
+pf = push --force-with-lease
+pf- = push --force
+pl = pull
+plr = pull --rebase
+pu = push --set-upstream
+r = reset
+r- = reset --hard
+rb = rebase
+rba = rebase --abort
+rbc = rebase --continue
+re = remote
+rea = remote add
+res = remote set-url
+rmc = rm --cached
+rs = restore
+rss = restore --staged
+rss- = restore --staged --worktree
+s = status
+sh = show
+shp = show --pretty=short --show-signature
+ss = status --short
+sta = stash apply
+stc = stash clear
+stl = stash list
+stp = stash push
+stpp = stash pop
+sts = stash show --text
+sw = switch
+wip = "!git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message '--wip-- [skip ci]' #"
+unwip = "!git log --max-count=1 | rg --quiet '\\-\\-wip\\-\\-' && git reset HEAD~1 #"
+
+[include]
+path = config_include
+

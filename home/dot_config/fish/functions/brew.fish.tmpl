@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "darwin" -}}
+function brew -d 'The missing package manager for macOS'
+  if type -q asdf and type -f $ASDF_DATA_DIR/python
+    set stripped_path (string replace -a "$ASDF_DATA_DIR/shims:" '' "$PATH")
+    env "PATH=$stripped_path" command brew $argv
+  else
+    command brew $argv
+  end
+end
+{{- end }}

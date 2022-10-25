@@ -1,0 +1,112 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+source "${HOME}/.local/share/chezmoi/lib/libcore.sh"
+source "${HOME}/.local/share/chezmoi/lib/libdarwin.sh"
+
+trap '(exit 130)' INT
+trap '(exit 143)' TERM
+trap 'rc=$?; handler $rc; exit $rc' EXIT
+
+readonly DOT_TEMPDIR="$(mktemp -d)"
+readonly DOT_LOGFILE="$(mktemp /tmp/install_shell_log.XXXXXX)"
+
+main() {
+  tput civis
+  if ! install_fish; then
+    return 1
+  fi
+  if ! check_default_shell; then
+    return 1
+  fi
+  tput cnorm
+}
+
+find_fish() {
+  FISH="$(command -v fish)"
+  if [[ -f "${FISH}" ]]; then
+    readonly FISH
+    return 0
+  fi
+  FISH="$(get_homebrew_prefix)/bin/fish"
+  if [[ -f "${FISH}" ]]; then
+    readonly FISH
+    return 0
+  fi
+  FISH="/usr/local/bin/fish"
+  if [[ -f "${FISH}" ]]; then
+    readonly FISH
+    return 0
+  fi
+  unset FISH
+  return 1
+}
+
+install_fish() {
+  if find_fish; then
+    succ 'Skipping installation, fish is already installed'
+    return 0
+  fi
+  if ! find_homebrew; then
+    fail 'Failed to install fish, Homebrew not found'
+    return 1
+  fi
+  DOT_WAIT_FLT=1 wait_strt 'Installing fish via Homebrew'
+  "${DOT_HOMEBREW}" install fish >> "${DOT_LOGFILE}" 2>&1
+  local rc=$?
+  case $rc in
+    0) DOT_WAIT_FLT=1 wait_succ 'Installing fish via Homebrew, done'; readonly FISH="${DOT_HOMEBREW_PREFIX}/bin/fish" ;;
+    *) DOT_WAIT_FLT=1 wait_fail 'Installing fish via Homebrew, failed'; return $rc ;;
+  esac
+}
+
+check_default_shell() {
+  info 'Checking if fish is the default shell'
+  if ! find_cmd 'sed'; then
+    cpln; fail 'Checking if fish is the default shell, failed (sed not found)'
+    return 1
+  fi
+  if [[ "$(dscl . -read ~/ UserShell | sed 's/UserShell: //')" == "${FISH}" ]]; then
+    cpln; succ 'Checking if fish is the default shell, done'
+    return 0
+  fi
+  cpln; fail 'Checking if fish is the default shell, failed'
+  if ! cnfm 'Set fish as the default shell?'; then
+    return 0
+  fi
+  if ! make_login_shell; then
+    return 1
+  fi
+  info 'Making fish the default login shell'
+  chsh -s "${FISH}"
+  case $? in
+    0) cpln; succ 'Making fish the default login shell, done' ;;
+    *) cpln; fail 'Making fish the default login shell, failed'; return 1 ;;
+  esac
+}
+
+make_login_shell() {
+  info 'Making fish a login shell'
+  if ! find_cmd 'grep'; then
+    cpln; fail 'Making fish a login shell, failed (grep not found)'
+    return 1
+  fi
+  if grep -Fxq "${FISH}" /etc/shells >> "${DOT_LOGFILE}" 2>&1; then
+    cpln; succ 'Making fish a login shell, done'
+    return 0
+  fi
+  sudo /bin/bash -c "echo \"${FISH}\" >> /etc/shells 2> \"${DOT_LOGFILE}\""
+  if (( $? != 0 )); then
+    cpln; fail 'Making fish a login shell, failed (sudo required)'
+    return 1
+  fi
+  if ! grep -Fxq "${FISH}" /etc/shells >> "${DOT_LOGFILE}" 2>&1; then
+    cpln; fail 'Making fish a login shell, failed'
+    return 1
+  fi
+  cpln; succ 'Making fish a login shell, done'
+  return 0
+}
+
+main "$@"
+{{- end -}}
