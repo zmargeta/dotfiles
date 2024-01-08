@@ -19,7 +19,7 @@ if type -q fzf
     set -gx FZF_CTRL_R_OPTS '--height=10% --scheme=history'
   end
 {{- if eq .chezmoi.os "darwin" }}
-  if type -q brew
+  if status is-interactive; and type -q brew
     set -l path (brew --prefix fzf)/shell/key-bindings.fish
     if test -f $path
       source $path
