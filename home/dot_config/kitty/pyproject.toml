@@ -1,8 +1,0 @@
-name = "kitty-tab-bar"
-version = "0.1.0"
-description = "Kitty Custom Tab Bar"
-license = "MIT"
-authors = [
-  "Željko Margeta <zeljko.margeta@gmail.com",
-]
-
