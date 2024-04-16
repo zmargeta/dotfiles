@@ -28,40 +28,26 @@ main() {
 }
 
 {{- $plugins := dict
-    "gradle" "https://github.com/rfrancis/asdf-gradle.git"
-    "java" "https://github.com/halcyon/asdf-java.git"
-    "maven" "https://github.com/halcyon/asdf-maven.git"
-    "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git" }}
+    "java" "https://github.com/halcyon/asdf-java.git" }}
 
 {{- if .personal }}
 {{- $plugins = merge $plugins (dict
-    "elixir" "https://github.com/asdf-vm/asdf-elixir.git"
-    "erlang" "https://github.com/asdf-vm/asdf-erlang.git"
-    "golang" "https://github.com/kennyp/asdf-golang.git"
     "groovy" "https://github.com/weibemoura/asdf-groovy.git"
     "kotlin" "https://github.com/asdf-community/asdf-kotlin.git"
     "python" "https://github.com/danhper/asdf-python.git"
     "rust" "https://github.com/code-lever/asdf-rust.git"
-    "sbt" "https://github.com/vforgione/asdf-sbt.git"
     "scala" "https://github.com/asdf-community/asdf-scala.git") }}
 {{- end }}
 
 {{- $sdks := dict
-    "gradle" "8.0"
-    "java" "temurin-19.0.0+36"
-    "maven" "3.9.0"
-    "nodejs" "18.11.0" }}
+    "java" "temurin-19.0.0+36" }}
 
 {{- if .personal }}
 {{- $sdks = merge $sdks (dict
-    "elixir" "1.14.2-otp-25"
-    "erlang" "25.2"
-    "golang" "1.19.2"
     "groovy" "4.0.9"
     "kotlin" "1.9.0"
     "python" "3.10.7"
     "rust" "1.65.0"
-    "sbt" "1.8.2"
     "scala" "3.2.0") }}
 {{- end }}
 

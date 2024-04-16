@@ -15,7 +15,7 @@ readonly ESC_CEL2="${ESC}[2K"
 readonly ESC_CNL1="${ESC}[1E"
 readonly ESC_CPL1="${ESC}[1F"
 readonly LOG_INT_PRE='→'
-readonly LOG_EXT_PRE='>'
+readonly LOG_EXT_PRE='…'
 
 cpln() {
   printf "${ESC_CEL2}\r${ESC_CPL1}${ESC_CEL2}\r"

@@ -41,6 +41,15 @@ else if type -q nvim
   set -gx VISUAL (which nvim)
 end
 
+if type -q volta
+  set -gx VOLTA_HOME $HOME/.volta
+  fish_add_path $VOLTA_HOME/bin
+end
+
+if type -q ov
+  set -gx PAGER (which ov)
+end
+
 if status is-interactive
   alias ... 'cd ../..'
   alias .... 'cd ../../..'
@@ -252,7 +261,10 @@ if status is-interactive
   if type -q asdf
     alias sdk asdf
   end
+  if type -q coursier
+    alias cs coursier
+  end
   if type -q thefuck
-    set -x THEFUCK_OVERRIDDEN_ALIASES 'asdf,cd,chezmoi,lvim,nvim'
+    set -x THEFUCK_OVERRIDDEN_ALIASES 'asdf,cd,chezmoi,coursier,lvim,nvim'
   end
 end

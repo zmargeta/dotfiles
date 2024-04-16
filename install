@@ -27,12 +27,12 @@ init() {
 install_prereqs() {
   local os_name="$(uname -s)"
   case "${os_name}" in
-    Darwin*) install_darwin_rereqs ;;
+    Darwin*) install_darwin_prereqs ;;
     *) ;;
   esac
 }
 
-install_darwin_rereqs() {
+install_darwin_prereqs() {
   if ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]]; then
     wait_strt 'Installing Xcode Command Line Tools'
     xcode-select --install
@@ -103,7 +103,7 @@ main() {
   if ! config_sudo_auth; then
     return 1
   fi
-  if !install_prereqs; then
+  if ! install_prereqs; then
     return 1
   fi
   tput civis

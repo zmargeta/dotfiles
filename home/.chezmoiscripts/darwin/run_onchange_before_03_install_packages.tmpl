@@ -69,6 +69,7 @@ check_cleanup() {
 {{- $taps := list
     "adevinta/homebrew-zoe"
     "buildpacks/tap"
+    "coursier/formulas"
     "homebrew/bundle"
     "homebrew/cask-fonts"
     "homebrew/cask-versions"
@@ -84,15 +85,15 @@ check_cleanup() {
 {{- end }}
 
 {{- $brews := list
-    "asdf"
     "awscli"
     "azcopy"
     "azure-cli"
     "bat"
-    "bazelisk"
     "buildifier"
     "checkov"
     "chezmoi"
+    "coursier"
+    "csvkit"
     "curl"
     "dash"
     "difftastic"
@@ -136,6 +137,7 @@ check_cleanup() {
     "thefuck"
     "tokei"
     "vivid"
+    "volta"
     "wget"
     "yq"
     "zoe"
@@ -172,7 +174,6 @@ check_cleanup() {
     "font-symbols-only-nerd-font"
     "font-ubuntu-mono"
     "font-victor-mono"
-    "google-cloud-sdk"
     "grammarly-desktop"
     "hyperkey"
     "jetbrains-toolbox"
