@@ -1,0 +1,18 @@
+{
+  "always_treat_brackets_as_autoclosed": true,
+  "autosave": "on_focus_change",
+  "buffer_font_family": "CommitMono",
+  "buffer_line_height": "standard",
+  "buffer_font_size": 12,
+  "cursor_blink": false,
+  "ui_font_size": 13,
+  "ui_font_family": "Lekton",
+  "tab_bar": {
+    "show": false,
+    "show_nav_history_buttons": false
+  },
+  "theme": "Gruvbox Dark Soft",
+  "preferred_line_length": 120,
+  "relative_line_numbers": true,
+  "vim_mode": true
+}
