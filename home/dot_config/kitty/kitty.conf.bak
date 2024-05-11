@@ -6,10 +6,10 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      CommitMono 325Regular
-bold_font        CommitMono 325Regular
-italic_font      Comitmono 325Regular Italic
-bold_italic_font Comitmono 325Regular Italic
+font_family      JuliaMono Light
+bold_font        JuliaMono Light
+italic_font      JuliaMono Light
+bold_italic_font JuliaMono Light
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -25,7 +25,7 @@ bold_italic_font Comitmono 325Regular Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
 font_size 12.0
-adjust_line_height 120%
+adjust_line_height 130%
 
 #: Font size (in pts)
 
@@ -60,7 +60,7 @@ adjust_line_height 120%
 #: separated by hyphens. This option can be specified multiple times.
 #: The syntax is::
 
-symbol_map U+E0A1-U+E0A3,U+E0B0-U+E0D4,U+E200-U+FD46,U+F0001-U+F1AF0 Symbols Nerd Font Mono
+symbol_map U+E0A1-U+E0A3,U+E0B0-U+E0D4,U+E200-U+FD46,U+F0001-U+F1AF0 SymbolsNFM
 
 # narrow_symbols
 
@@ -96,7 +96,10 @@ symbol_map U+E0A1-U+E0A3,U+E0B0-U+E0D4,U+E200-U+FD46,U+F0001-U+F1AF0 Symbols Ner
 
 # font_features
 
-#: E.g. font_features none
+font_features CommitMonoV142-ExtraLight_225-Regular +ss03 +ss04 +ss05 +cv06
+font_features CommitMonoV142-ExtraLight_225-Italic +ss03 +ss04 +ss05 +cv06
+font_features CommitMonoV142-ExtraLight_250-Regular +ss03 +ss04 +ss05 +cv06
+font_features CommitMonoV142-ExtraLight_250-Italic +ss03 +ss04 +ss05 +cv06
 
 #: Choose exactly which OpenType features to enable or disable. This
 #: is useful as some fonts might have features worthwhile in a
@@ -722,7 +725,7 @@ initial_window_height 24c
 #: set the vertical and horizontal sides. Three values set top,
 #: horizontal and bottom. Four values set top, right, bottom and left.
 
-window_padding_width 0 6 6
+window_padding_width 6
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border). A single value sets all four sides. Two values set
@@ -903,12 +906,12 @@ tab_bar_style powerline
 #: can change the number of cells used by adding/removing entries to
 #: this list.
 
-# tab_separator " ┇"
+# tab_separator " |"
 
 #: The separator between tabs in the tab bar when using separator as
 #: the tab_bar_style.
 
-tab_powerline_style slanted
+tab_powerline_style angled
 
 #: The powerline separator style between tabs in the tab bar when
 #: using powerline as the tab_bar_style, can be one of: angled,
@@ -921,7 +924,7 @@ tab_powerline_style slanted
 #: leading or trailing spaces, surround the text with quotes. See
 #: tab_title_template for how this is rendered.
 
-tab_title_template "{fmt.fg.tab}{bell_symbol}{activity_symbol}{index}:{title}"
+tab_title_template "{fmt.fg.tab}{bell_symbol}{activity_symbol}{index}:{title[:title.rfind('(')-1]}"
 
 #: A template to render the tab title. The default just renders the
 #: title with optional symbols for bell and activity. If you wish to
@@ -1457,7 +1460,7 @@ macos_quit_when_last_window_closed yes
 #: resizable on macOS. Changing this option by reloading the config
 #: will only affect newly created OS windows.
 
-macos_thicken_font 0.25
+# macos_thicken_font 0.25
 
 #: Draw an extra border around the font with the given width, to
 #: increase legibility at small font sizes on macOS. For example, a
@@ -1469,7 +1472,7 @@ macos_thicken_font 0.25
 #: Use the macOS traditional full-screen transition, that is faster,
 #: but less pretty.
 
-macos_show_window_title_in menubar
+macos_show_window_title_in none
 
 #: Control where the window title is displayed on macOS. A value of
 #: window will show the title of the currently active window at the
@@ -2240,6 +2243,6 @@ macos_show_window_title_in menubar
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Latte
+# Catppuccin-Macchiato
 include current-theme.conf
 # END_KITTY_THEME

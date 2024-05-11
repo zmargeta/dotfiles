@@ -12,10 +12,7 @@ format = """
 ($nodejs )\
 ($helm )\
 ($cmd_duration )\
-($battery )\
 $line_break\
-($jobs )\
-($container )\
 $character"""
 
 command_timeout = 1000
@@ -214,11 +211,12 @@ style = 'bright-black'
 symbol = '⌘'
 
 [character]
-error_symbol = '[ ](red)'
-success_symbol = '[ ](white)'
-vimcmd_symbol = '[ ](blue)'
-vimcmd_replace_one_symbol = '[ ](blue)'
-vimcmd_visual_symbol = '[ ](blue)'
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
 
 [time]
 disabled = false

@@ -1,6 +1,6 @@
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "catppuccin-macchiato"
+lvim.colorscheme = "gruvbox"
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
@@ -41,6 +41,22 @@ lvim.plugins = {
     config = function ()
       require("catppuccin").setup({
         no_italic = true
+      })
+    end
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    name = "gruvbox",
+    config = function()
+      require("gruvbox").setup({
+        bold = false,
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = false,
+          operators = false,
+          folds = false
+        }
       })
     end
   },
