@@ -1,7 +1,7 @@
 local wezterm = require('wezterm')
 return {
   color_scheme = 'GruvboxDark',
-  default_cursor_style = 'SteadyUnderline',
+  default_cursor_style = 'BlinkingUnderline',
   font = wezterm.font_with_fallback({
     { family = 'JuliaMono',      weight = 'Light', assume_emoji_presentation = false },
     { family = 'JetBrains Mono', weight = 'Regular' }
