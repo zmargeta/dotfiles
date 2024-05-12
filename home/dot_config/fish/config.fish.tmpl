@@ -4,11 +4,13 @@ function postexec_handler --on-event fish_postexec
   echo
 end
 
-set -gx fish_cursor_default block      blink
-set -gx fish_cursor_insert  underscore blink
-set -gx fish_cursor_visual  block      blink
-set -gx fish_cursor_replace block      blink
-set -gx fish_cursor_unknown underscore blink
+set -gx fish_cursor_default block
+set -gx fish_cursor_insert underscore
+set -gx fish_cursor_visual block
+set -gx fish_cursor_replace block
+set -gx fish_cursor_unknown underscore
+set -gx fish_vi_force_cursor 1
+set fish_color_command blue --bold
 
 test -d $HOME/.local/bin
 or mkdir -p $HOME/.local/bin
