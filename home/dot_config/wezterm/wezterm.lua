@@ -16,6 +16,7 @@ return {
       })
     }
   },
+  frond_end = 'WebGpu',
   keys = {
     { key = 'LeftArrow',  mods = 'OPT|CMD',    action = wezterm.action.ActivateTabRelative(-1) },
     { key = 'RightArrow', mods = 'OPT|CMD',    action = wezterm.action.ActivateTabRelative(1) },
