@@ -16,30 +16,6 @@ k9s:
     fullScreenLogs: false
     textWrap: false
     showTime: false
-  currentContext: colima
-  currentCluster: colima
-  clusters:
-    colima:
-      namespace:
-        active: default
-        lockFavorites: false
-        favorites:
-        - all
-        - default
-      view:
-        active: pods
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.35.0
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-        labels: {}
-      portForwardAddress: localhost
   thresholds:
     cpu:
       critical: 90
@@ -47,4 +23,7 @@ k9s:
     memory:
       critical: 90
       warn: 70
+  ui:
+    logoless: true
+    skin: gruvbox-dark
   screenDumpDir: {{ .chezmoi.homeDir }}/k9s-screens
