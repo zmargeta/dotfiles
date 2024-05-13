@@ -44,8 +44,8 @@ home_symbol = '~'
 read_only = 'ro'
 read_only_style = 'bright-black'
 repo_root_format = '[$repo_root]($repo_root_style)[$path]($style)[( $read_only)]($read_only_style)'
-repo_root_style = 'blue underline'
-style = 'blue'
+repo_root_style = 'bright-blue underline'
+style = 'bright-blue'
 truncate_to_repo = true
 truncation_symbol = '../'
 
@@ -53,7 +53,7 @@ truncation_symbol = '../'
 
 [git_branch]
 format = 'on [$symbol]($style) [$branch(:$remote_branch)]($style underline)'
-style = 'cyan'
+style = 'bright-cyan'
 symbol = ''
 
 [git_commit]
