@@ -1,6 +1,6 @@
 local wezterm = require('wezterm')
 return {
-  color_scheme = 'GruvboxDark',
+  color_scheme = 'tokyonight_storm',
   default_cursor_style = 'BlinkingUnderline',
   font = wezterm.font_with_fallback({
     { family = 'JuliaMono',      weight = 'Light', assume_emoji_presentation = false },
@@ -28,11 +28,11 @@ return {
   send_composed_key_when_right_alt_is_pressed = false,
   window_decorations = 'RESIZE',
   window_frame = {
-    active_titlebar_bg = '#282828',
-    active_titlebar_border_bottom = '#282828',
+    active_titlebar_bg = '#24283b',
+    active_titlebar_border_bottom = '#24283b',
     button_bg = '#1b1b1b',
     font = wezterm.font('Lekton'),
     font_size = 13,
-    inactive_titlebar_border_bottom = '#282828',
+    inactive_titlebar_border_bottom = '#24283b',
   }
 }

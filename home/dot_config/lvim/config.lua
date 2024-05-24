@@ -1,6 +1,6 @@
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "monokai-pro"
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
@@ -36,11 +36,21 @@ lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.bufferline.options.mode = "tabs"
 lvim.plugins = {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "loctvl842/monokai-pro.nvim",
+    name = "monokai-pro",
     config = function ()
-      require("catppuccin").setup({
-        no_italic = true
+      require("monokai-pro").setup({
+        styles = {
+          comment = { italic = false },
+          keyword = { italic = false },
+          type = { italic = false },
+          storageclass = { italic = false },
+          structure = { italic = false },
+          parameter = { italic = false },
+          annotation = { italic = false },
+          tag_attribute = { italic = false },
+        },
+        filter = "octagon",
       })
     end
   },
