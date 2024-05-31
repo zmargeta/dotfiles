@@ -35,10 +35,7 @@ set -gx SSH_AUTH_SOCK $HOME/.config/op/agent.sock
 test -f $HOME/.config/op/plugins.sh
 and source $HOME/.config/op/plugins.sh
 
-if type -q lvim
-  set -gx EDITOR (which lvim)
-  set -gx VISUAL (which lvim)
-else if type -q nvim
+if type -q nvim
   set -gx EDITOR (which nvim)
   set -gx VISUAL (which nvim)
 end
@@ -60,11 +57,7 @@ if status is-interactive
   if type -q idea
     abbr -ag edit idea -e
   end
-  if type -q lvim
-    alias vi lvim
-    alias vim lvim
-    abbr -ag e lvim
-  else if type -q nvim
+  if type -q nvim
     alias vi nvim
     alias vim nvim
     abbr -ag e nvim
@@ -267,6 +260,6 @@ if status is-interactive
     alias cs coursier
   end
   if type -q thefuck
-    set -x THEFUCK_OVERRIDDEN_ALIASES 'asdf,cd,chezmoi,coursier,lvim,nvim'
+    set -x THEFUCK_OVERRIDDEN_ALIASES 'asdf,cd,chezmoi,coursier,nvim'
   end
 end

@@ -11,7 +11,7 @@
     "show": false,
     "show_nav_history_buttons": false
   },
-  "theme": "Gruvbox Dark Soft",
+  "theme": "Zedokai (Filter Octagon)",
   "preferred_line_length": 120,
   "relative_line_numbers": true,
   "vim_mode": true
