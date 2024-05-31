@@ -1,0 +1,48 @@
+return {
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      options = {
+        theme = "monokai-pro",
+      },
+      sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = { "filename" },
+        lualine_x = {
+          "encoding",
+          {
+            "fileformat",
+            symbols = {
+              unix = "LF",
+              dos = "CRLF",
+              mac = "LF",
+            },
+          },
+          {
+            function()
+              local shift_width = vim.api.nvim_get_option_value("shiftwidth", { buf = 0 })
+              return "󰌒 " .. shift_width
+            end,
+            padding = 1,
+          },
+          "filetype",
+        },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { "filename" },
+        lualine_x = { "location" },
+        lualine_y = {},
+        lualine_z = {},
+      },
+      extensions = { "nvim-tree" },
+    },
+  },
+}

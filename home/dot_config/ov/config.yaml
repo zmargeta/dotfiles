@@ -1,0 +1,6 @@
+Prompt:
+  Normal:
+    ShowFilename: false
+    InvertColor: false
+    ProcessOfCount: true
+QuitSmall: true
