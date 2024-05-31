@@ -22,6 +22,8 @@ return {
 		{ key = "RightArrow", mods = "OPT|CMD", action = wezterm.action.ActivateTabRelative(1) },
 		{ key = "LeftArrow", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
 		{ key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(1) },
+		{ key = "h", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	},
 	line_height = 1.1,
 	send_composed_key_when_left_alt_is_pressed = true,
