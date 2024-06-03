@@ -26,16 +26,30 @@ return {
 		{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	},
 	line_height = 1.1,
+	colors = {
+		tab_bar = {
+			active_tab = {
+				bg_color = "#393d4e",
+				fg_color = "#a9b1d6",
+			},
+			inactive_tab = {
+				bg_color = "#24283b",
+				fg_color = "#959cbd",
+			},
+			new_tab = {
+				bg_color = "#24283b",
+				fg_color = "#959cbd",
+			},
+			inactive_tab_edge = "#24283b",
+		},
+	},
 	send_composed_key_when_left_alt_is_pressed = true,
 	send_composed_key_when_right_alt_is_pressed = false,
 	window_decorations = "RESIZE",
 	window_frame = {
 		active_titlebar_bg = "#24283b",
-		active_titlebar_border_bottom = "#24283b",
-		button_bg = "#1b1b1b",
 		font = wezterm.font("Lekton"),
 		font_size = 13,
-		inactive_titlebar_border_bottom = "#24283b",
 	},
 	window_padding = {
 		left = "1cell",
