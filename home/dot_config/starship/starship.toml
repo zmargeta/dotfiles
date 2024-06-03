@@ -13,9 +13,9 @@ format = """
 ($helm )\
 ($cmd_duration )\
 $line_break\
-$line_break"""
+$character"""
 
-add_newline = true
+add_newline = false
 command_timeout = 1000
 
 [aws]
@@ -191,3 +191,7 @@ disabled = false
 [time]
 disabled = false
 time_format = '%FT%T'
+
+[character]
+success_symbol = '[ ](blue)'
+error_symbol = '[ ](red)'

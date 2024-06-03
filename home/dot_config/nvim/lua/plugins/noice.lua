@@ -9,7 +9,7 @@ return {
     cmdline = {
       format = {
         cmdline = {
-          icon = "󰅬 ",
+          icon = " ",
         },
         search_down = {
           icon = "󰍉 ",

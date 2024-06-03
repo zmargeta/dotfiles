@@ -50,6 +50,9 @@ if type -q ov
 end
 
 if status is-interactive
+  function separate_prompt --on-event fish_postexec
+    echo ""
+  end
   if type -q zoxide
     alias cd z
   end
