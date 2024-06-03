@@ -37,4 +37,10 @@ return {
 		font_size = 13,
 		inactive_titlebar_border_bottom = "#24283b",
 	},
+	window_padding = {
+		left = "1cell",
+		right = "1cell",
+		top = "0.5cell",
+		bottom = "0cell",
+	},
 }
