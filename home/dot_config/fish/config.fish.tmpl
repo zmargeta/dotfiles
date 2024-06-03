@@ -50,6 +50,9 @@ if type -q ov
 end
 
 if status is-interactive
+  if type -q zoxide
+    alias cd z
+  end
   alias ... 'cd ../..'
   alias .... 'cd ../../..'
   alias ..... 'cd ../../../..'
