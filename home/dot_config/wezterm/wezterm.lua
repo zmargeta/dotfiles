@@ -17,6 +17,7 @@ return {
 		},
 	},
 	front_end = "WebGpu",
+	hide_tab_bar_if_only_one_tab = true,
 	keys = {
 		{ key = "LeftArrow", mods = "OPT|CMD", action = wezterm.action.ActivateTabRelative(-1) },
 		{ key = "RightArrow", mods = "OPT|CMD", action = wezterm.action.ActivateTabRelative(1) },
