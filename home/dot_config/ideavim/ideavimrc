@@ -45,15 +45,22 @@ let g:highlightedyank_highlight_duration="250"
 
 nmap <C-u> <C-u>zz
 nmap <C-d> <C-d>zz
+nmap n nzzzv
+nmap N Nzzzv
+nnoremap Y y$
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 nmap <C-H> <C-W>h
+imap <C-N> <Action>(HippieCompletion)
+imap <C-P> <Action>(HippieBackwardCompletion)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
 nmap gI <Action>(GotoImplementation)
 nmap <leader>f <Action>(ReformatCode)
 nmap <leader>rn <Action>(RenameElement)
 nmap <leader>s. <Action>(RecentFiles)
 nmap <leader>sf <Action>(GotoFile)
 nmap <leader>sg <Action>(SearchEverywhere)
-imap <C-N> <Action>(HippieCompletion)
-imap <C-P> <Action>(HippieBackwardCompletion)
+nmap <leader>nm <Action>(MoveStatementDown)
+nmap <leader>pm <Action>(MoveStatementUp)
