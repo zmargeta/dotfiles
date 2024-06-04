@@ -12,16 +12,16 @@ return {
           icon = " ",
         },
         search_down = {
-          icon = "󰍉 ",
+          icon = " ",
         },
         search_up = {
-          icon = "󰍉 ",
+          icon = " ",
         },
         filter = {
-          icon = "󰈲 ",
+          icon = "󰋶 ",
         },
         help = {
-          icon = "󰋼 ",
+          icon = "󰺅 ",
         },
       },
     },

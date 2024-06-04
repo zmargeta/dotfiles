@@ -195,3 +195,7 @@ time_format = '%FT%T'
 [character]
 success_symbol = '[ ](blue)'
 error_symbol = '[ ](red)'
+vimcmd_symbol = '[ ](blue)'
+vimcmd_replace_one_symbol = '[ ](purple)'
+vimcmd_replace_symbol = '[ ](purple)'
+vimcmd_visual_symbol = '[ ](yellow)'
