@@ -19,6 +19,7 @@ return {
         "scala",
         "rust",
         "ocaml",
+        "yaml",
       },
       auto_install = true,
       highlight = {
