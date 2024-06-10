@@ -6,6 +6,7 @@ sethandler <C-6> a:ide
 sethandler <C-S-6> a:ide
 sethandler <C-A> a:ide
 sethandler <C-B> a:ide
+sethandler <C-C> a:vim
 sethandler <C-D> a:vim
 sethandler <C-E> a:ide
 sethandler <C-F> a:ide
@@ -43,24 +44,22 @@ set idearefactormode=keep
 
 let g:highlightedyank_highlight_duration="250"
 
-nmap <C-u> <C-u>zz
-nmap <C-d> <C-d>zz
-nmap n nzzzv
-nmap N Nzzzv
+nnoremap <C-U> <C-U>zz
+nnoremap <C-D> <C-D>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
 nnoremap Y y$
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
-nmap <C-L> <C-W>l
-nmap <C-H> <C-W>h
-imap <C-N> <Action>(HippieCompletion)
-imap <C-P> <Action>(HippieBackwardCompletion)
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
 nmap ]d <Action>(GotoNextError)
 nmap [d <Action>(GotoPreviousError)
 nmap gI <Action>(GotoImplementation)
-nmap <leader>f <Action>(ReformatCode)
-nmap <leader>rn <Action>(RenameElement)
-nmap <leader>s. <Action>(RecentFiles)
-nmap <leader>sf <Action>(GotoFile)
-nmap <leader>sg <Action>(SearchEverywhere)
-nmap <leader>nm <Action>(MoveStatementDown)
-nmap <leader>pm <Action>(MoveStatementUp)
+nmap <Leader>f <Action>(ReformatCode)
+nmap <Leader>rn <Action>(RenameElement)
+nmap <Leader>s. <Action>(RecentFiles)
+nmap <Leader>sf <Action>(GotoFile)
+nmap <Leader>sg <Action>(SearchEverywhere)
+nmap <Leader>nm <Action>(MoveStatementDown)
+nmap <Leader>pm <Action>(MoveStatementUp)
