@@ -24,7 +24,7 @@ return {
         lualine_b = {
           {
             "b:gitsigns_head",
-            icon = "",
+            icon = "",
           },
         },
         lualine_c = {
@@ -32,9 +32,9 @@ return {
             "diff",
             source = diff_source,
             symbols = {
-              added = " ",
-              modified = " ",
-              removed = " ",
+              added = " ",
+              modified = " ",
+              removed = " ",
             },
             padding = { left = 2, right = 1 },
             cond = nil,

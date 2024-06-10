@@ -54,7 +54,7 @@ truncation_symbol = '../'
 [git_branch]
 format = 'on [$symbol]($style) [$branch(:$remote_branch)]($style underline)'
 style = 'bright-cyan'
-symbol = ''
+symbol = ''
 
 [git_commit]
 format = '[($tag:)$hash]($style)'
@@ -193,9 +193,9 @@ disabled = false
 time_format = '%FT%T'
 
 [character]
-success_symbol = '[ ](blue)'
-error_symbol = '[ ](red)'
-vimcmd_symbol = '[ ](blue)'
-vimcmd_replace_one_symbol = '[ ](purple)'
-vimcmd_replace_symbol = '[ ](purple)'
-vimcmd_visual_symbol = '[ ](yellow)'
+success_symbol = '[](blue)'
+error_symbol = '[](red)'
+vimcmd_symbol = '[](blue)'
+vimcmd_replace_one_symbol = '[](purple)'
+vimcmd_replace_symbol = '[](purple)'
+vimcmd_visual_symbol = '[](yellow)'
