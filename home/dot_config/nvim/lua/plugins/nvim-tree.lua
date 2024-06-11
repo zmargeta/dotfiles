@@ -1,18 +1,25 @@
 return {
   {
     "kyazdani42/nvim-tree.lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
     opts = {
       renderer = {
         root_folder_modifier = ":t",
         icons = {
+          git_placement = "signcolumn",
+          diagnostics_placement = "signcolumn",
+          modified_placement = "signcolumn",
+          bookmarks_placement = "signcolumn",
           glyphs = {
             default = "",
             symlink = "",
             folder = {
               arrow_open = "",
               arrow_closed = "",
-              default = "",
-              open = "",
+              default = "",
+              open = "",
               empty = "",
               empty_open = "",
               symlink = "",
@@ -33,6 +40,7 @@ return {
       view = {
         width = 35,
         side = "left",
+        signcolumn = "yes",
       },
     },
   },

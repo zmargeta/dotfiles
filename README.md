@@ -4,7 +4,7 @@
 
 This repository contains my dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi).
 
-## ⚡️ Quick Start
+## Quick Start
 
 First, [download](https://downloads.1password.com/mac/1Password.zip) and install the [1Password](https://1password.com/product/mac) password manager.
 
@@ -20,7 +20,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/zmargeta/dotfiles/main/i
 
 After running the install script, chezmoi is aliased to `dot` in Fish shell.
 
-## 🪜 Manual Configuration
+## Manual Configuration
 
 Depending on the OS, go through one of the checklists (you can import it to **Obsidian** first):
 
@@ -30,7 +30,7 @@ Manual configuration checklists contain all the required steps to follow, in ord
 
 They also include the **Quick Start** steps and are the **preferred way to setup a new machine**.
 
-## 🛠️ Tools & Apps
+## Tools & Apps
 
 What is included out of the box for **macOS**?
 
@@ -50,25 +50,17 @@ What is managed outside dotfiles for **macOS**?
 
 To add a Homebrew formula, cask or App Store application, just edit the configuration and run `dota!`.
 
-## 📦 SDKs
+## Terminal, Shell, Prompt & Themes
 
-All the SDKs are managed by [asdf](https://asdf-vm.com) and are configured [here](./home/.chezmoiscripts/run_onchange_after_09_install_sdks.tmpl).
-
-To add or remove an SDK, just edit the configuration file and run `dota!`.
-
-asdf is aliased to `sdk` in Fish shell, after running the install script.
-
-## 📺 Terminal, Shell, Prompt & Themes
-
-My terminal emulator of choice is [Kitty](https://sw.kovidgoyal.net/kitty/) and you can find the configuration [here](./home/dot_config/kitty/kitty.conf).
+My terminal emulator of choice is [WezTerm](https://wezfurlong.org/wezterm/index.html) and you can find the configuration [here](./home/dot_config/wezterm/wezterm.lua).
 
 I am primarily using the [Fish shell](https://fishshell.com), including some [custom functions](https://github.com/zmargeta/dotfiles/tree/main/home/dot_config/fish/functions).
 
 Prompt is displayed by [Starship](https://starship.rs) and configured [here](./home/dot_config/starship/starship.toml).
 
-As far as theming goes, everything **should** be themed using the [Catppuccin Latte](https://github.com/catppuccin/catppuccin) theme.
+As far as theming goes, everything **should** be themed using the [Tokyo Night Storm](https://github.com/folke/tokyonight.nvim) theme.
 
-## 📜 License
+## License
 
 Everything is licensed under the [MIT License](./LICENSE), meaning that you can basically **do whatever you want** with it.
 
