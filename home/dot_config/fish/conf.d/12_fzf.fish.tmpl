@@ -1,18 +1,32 @@
 if type -q fzf
   if type -q fd
     set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix'
-    set -gx FZF_DEFAULT_OPTS '
-        --ansi
-        --prompt=\' \'
-        --pointer=
-        --marker=
-        --height=10%
-        --layout=default
-        --scheme=default
-        --color=fg:#c0caf5,bg:#24283b,hl:#ff9e64
-        --color=fg+:#c0caf5,bg+:#292e42,hl+:#ff9e64
-        --color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff
-        --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+    set -gx FZF_DEFAULT_OPTS "\
+--ansi \
+--highlight-line \
+--border=none \
+--prompt=' ' \
+--pointer= \
+--marker= \
+--height=10% \
+--layout=default \
+--scheme=default \
+--color=bg+:#292e42 \
+--color=bg:#24283b \
+--color=border:#29a4bd \
+--color=fg:#c0caf5 \
+--color=gutter:#1f2335 \
+--color=header:#ff9e64 \
+--color=hl+:#2ac3de \
+--color=hl:#2ac3de \
+--color=info:#545c7e \
+--color=marker:#ff007c \
+--color=pointer:#ff007c \
+--color=prompt:#2ac3de \
+--color=query:#c0caf5:regular \
+--color=scrollbar:#29a4bd \
+--color=separator:#ff9e64 \
+--color=spinner:#ff007c"
     set -gx FZF_CTRL_T_COMMAND 'fd --type f --strip-cwd-prefix $dir'
     set -gx FZF_CTRL_T_OPTS '--height=10% --layout=reverse-list --scheme=path'
     set -gx FZF_ALT_C_COMMAND 'fd --type d --strip-cwd-prefix $dir'
