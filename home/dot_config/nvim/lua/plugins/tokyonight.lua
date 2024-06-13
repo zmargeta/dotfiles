@@ -1,8 +1,13 @@
 return {
   {
-    "loctvl842/monokai-pro.nvim",
+    "folke/tokyonight.nvim",
+    lazy = false,
     priority = 1000,
     opts = {
+      style = "storm",
+      light_style = "day",
+      transparent = false,
+      terminal_colors = true,
       styles = {
         comment = { italic = false },
         keyword = { italic = false },
@@ -12,11 +17,16 @@ return {
         parameter = { italic = false },
         annotation = { italic = false },
         tag_attribute = { italic = false },
+        sidebars = "dark",
+        floats = "dark",
       },
-      filter = "octagon",
+      sidebars = { "qf", "terminal", "help" },
+      hide_inactive_statusline = false,
+      dim_inactive = true,
+      lualine_bold = true,
     },
     init = function()
-      vim.cmd.colorscheme("monokai-pro")
+      vim.cmd.colorscheme("tokyonight")
     end,
   },
 }

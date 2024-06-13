@@ -17,7 +17,7 @@ return {
     },
     opts = {
       options = {
-        theme = "monokai-pro",
+        theme = "tokyonight",
       },
       sections = {
         lualine_a = { "mode" },
