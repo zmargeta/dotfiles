@@ -18,6 +18,7 @@ return {
           icon = " ",
         },
         filter = {
+          pattern = "^:%s+!",
           icon = " ",
         },
         help = {

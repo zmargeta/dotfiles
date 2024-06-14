@@ -8,7 +8,6 @@ local function diff_source()
     }
   end
 end
-
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -72,7 +71,6 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
-      extensions = { "nvim-tree" },
     },
   },
 }

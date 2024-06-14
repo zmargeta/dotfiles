@@ -43,12 +43,12 @@ return {
         { { "neovim_green", 0, 9 }, { "neovim_blue", 9, 18 } },
       }
       dashboard.section.buttons.val = {
-        dashboard.button("f", "  Find File", "<Cmd>Telescope find_files<CR>"),
         dashboard.button("n", "  New File", "<Cmd>ene!<CR>"),
-        dashboard.button("p", "  Projects ", "<Cmd>Telescope project<CR>"),
-        dashboard.button("r", "  Recent files", "<Cmd>Telescope oldfiles<CR>"),
-        dashboard.button("g", "  Find Text", "<Cmd>Telescope live_grep<CR>"),
-        dashboard.button("c", "  Configuration", "<Cmd>edit " .. vim.fn.stdpath("config") .. "<CR>"),
+        dashboard.button("p", "  Open Project ", "<Cmd>Telescope project<CR>"),
+        dashboard.button("f", "  Open File", "<Cmd>Telescope find_files<CR>"),
+        dashboard.button(".", "  Open Recent File", "<Cmd>Telescope oldfiles<CR>"),
+        dashboard.button("l", "  Find by Live Grep", "<Cmd>Telescope live_grep<CR>"),
+        dashboard.button("c", "  Configuration", "<Cmd>cd " .. vim.fn.stdpath("config") .. "<CR><Cmd>edit .<CR>"),
         dashboard.button("q", "  Quit", "<Cmd>quit<CR>"),
       }
       dashboard.section.footer.val = fortune

@@ -190,7 +190,7 @@ disabled = false
 
 [time]
 disabled = false
-time_format = '%FT%T'
+time_format = '%F %T'
 
 [character]
 success_symbol = '[](blue)'
