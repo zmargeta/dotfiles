@@ -13,6 +13,7 @@ return {
         end,
       },
       "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
       "nvim-telescope/telescope-project.nvim",
       { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     },
@@ -27,10 +28,14 @@ return {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),
           },
+          ["file_browser"] = {
+            hijack_netrw = true,
+          },
         },
       })
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension, "ui-select")
+      pcall(require("telescope").load_extension, "file-browser")
       pcall(require("telescope").load_extension, "project")
       local builtin = require("telescope.builtin")
       local extensions = require("telescope").extensions
@@ -44,6 +49,7 @@ return {
       vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set("n", "<leader>sp", extensions.project.project, { desc = "[S]earch [P]rojects" })
+      vim.keymap.set("n", "<leader>e", extensions.file_browser.file_browser, { desc = "File [E]xplorer" })
       vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
       vim.keymap.set("n", "<leader>/", function()
         builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
