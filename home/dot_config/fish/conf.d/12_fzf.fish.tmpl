@@ -33,13 +33,15 @@ if type -q fzf
     set -gx FZF_ALT_C_OPTS '--height=10% --layout=reverse-list --scheme=path'
     set -gx FZF_CTRL_R_OPTS '--height=10% --scheme=history'
   end
+  if status is-interactive
 {{- if eq .chezmoi.os "darwin" }}
-  if type -q brew
-    set -l path (brew --prefix fzf)/shell/key-bindings.fish
-    if test -f $path
-      source $path
-      fzf_key_bindings
+    if type -q brew
+      set -l path (brew --prefix fzf)/shell/key-bindings.fish
+      if test -f $path
+        source $path
+        fzf_key_bindings
+      end
     end
-  end
 {{- end }}
+  end
 end
