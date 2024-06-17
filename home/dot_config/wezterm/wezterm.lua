@@ -1,6 +1,23 @@
 local wezterm = require("wezterm")
 return {
   color_scheme = "tokyonight_storm",
+  colors = {
+    tab_bar = {
+      active_tab = {
+        bg_color = "#393d4e",
+        fg_color = "#a9b1d6",
+      },
+      inactive_tab = {
+        bg_color = "#24283b",
+        fg_color = "#959cbd",
+      },
+      new_tab = {
+        bg_color = "#24283b",
+        fg_color = "#959cbd",
+      },
+      inactive_tab_edge = "#24283b",
+    },
+  },
   default_cursor_style = "BlinkingUnderline",
   font = wezterm.font_with_fallback({
     { family = "JuliaMono", weight = "Light", assume_emoji_presentation = false },
@@ -25,23 +42,7 @@ return {
     { key = "RightArrow", mods = "SHIFT|OPT|CMD", action = wezterm.action.MoveTabRelative(1) },
   },
   line_height = 1.1,
-  colors = {
-    tab_bar = {
-      active_tab = {
-        bg_color = "#393d4e",
-        fg_color = "#a9b1d6",
-      },
-      inactive_tab = {
-        bg_color = "#24283b",
-        fg_color = "#959cbd",
-      },
-      new_tab = {
-        bg_color = "#24283b",
-        fg_color = "#959cbd",
-      },
-      inactive_tab_edge = "#24283b",
-    },
-  },
+  native_macos_fullscreen_mode = true,
   send_composed_key_when_left_alt_is_pressed = true,
   send_composed_key_when_right_alt_is_pressed = false,
   window_decorations = "RESIZE",
