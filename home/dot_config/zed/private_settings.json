@@ -11,7 +11,7 @@
     "show": false,
     "show_nav_history_buttons": false
   },
-  "theme": "Zedokai (Filter Octagon)",
+  "theme": "Catppuccin Macchiato - No Italics",
   "preferred_line_length": 120,
   "relative_line_numbers": true,
   "vim_mode": true
