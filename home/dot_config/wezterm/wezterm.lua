@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 return {
   color_scheme = "tokyonight_storm",
   colors = {
@@ -34,13 +35,25 @@ return {
     },
   },
   front_end = "WebGpu",
-  hide_tab_bar_if_only_one_tab = true,
   keys = {
-    { key = "LeftArrow", mods = "OPT|CMD", action = wezterm.action.ActivateTabRelative(-1) },
-    { key = "RightArrow", mods = "OPT|CMD", action = wezterm.action.ActivateTabRelative(1) },
-    { key = "LeftArrow", mods = "SHIFT|OPT|CMD", action = wezterm.action.MoveTabRelative(-1) },
-    { key = "RightArrow", mods = "SHIFT|OPT|CMD", action = wezterm.action.MoveTabRelative(1) },
+    { key = ":", mods = "LEADER", action = act.ActivateCommandPalette },
+    { key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
+    { key = "<", mods = "LEADER", action = act.ActivateTabRelative(-1) },
+    { key = ">", mods = "LEADER", action = act.ActivateTabRelative(1) },
+    { key = "LeftArrow", mods = "CTRL|SHIFT", action = act.MoveTabRelative(-1) },
+    { key = "RightArrow", mods = "CTRL|SHIFT", action = act.MoveTabRelative(1) },
+    { key = "|", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "-", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+    { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
+    { key = "q", mods = "LEADER", action = act.PaneSelect },
+    { key = "h", mods = "LEADER", action = act.AdjustPaneSize({ "Left", 4 }) },
+    { key = "j", mods = "LEADER", action = act.AdjustPaneSize({ "Down", 4 }) },
+    { key = "k", mods = "LEADER", action = act.AdjustPaneSize({ "Up", 4 }) },
+    { key = "l", mods = "LEADER", action = act.AdjustPaneSize({ "Right", 4 }) },
+    { key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
+    { key = "&", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
   },
+  leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
   line_height = 1.1,
   native_macos_fullscreen_mode = true,
   send_composed_key_when_left_alt_is_pressed = true,
