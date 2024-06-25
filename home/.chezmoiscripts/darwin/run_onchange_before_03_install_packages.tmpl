@@ -196,7 +196,8 @@ check_cleanup() {
 {{- if .personal }}
 {{- $casks = concat $casks (list
     "kindle"
-    "prusaslicer") }}
+    "prusaslicer"
+    "utm" ) }}
 {{- else }}
 {{- $casks = concat $casks (list
     "microsoft-azure-storage-explorer"
