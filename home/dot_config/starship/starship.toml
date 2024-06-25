@@ -15,7 +15,7 @@ format = """
 $line_break\
 $character"""
 
-add_newline = true
+add_newline = false
 command_timeout = 1000
 
 [aws]
