@@ -45,9 +45,8 @@ return {
       dashboard.section.buttons.val = {
         dashboard.button("n", "  New File", "<Cmd>ene!<CR>"),
         dashboard.button("p", "  Open Project ", "<Cmd>Telescope project<CR>"),
-        dashboard.button("f", "  Open File", "<Cmd>Telescope find_files<CR>"),
+        dashboard.button("f", "  Open File", "<Cmd>Telescope file_browser<CR>"),
         dashboard.button(".", "  Open Recent File", "<Cmd>Telescope oldfiles<CR>"),
-        dashboard.button("l", "  Find by Live Grep", "<Cmd>Telescope live_grep<CR>"),
         dashboard.button("c", "  Configuration", "<Cmd>cd " .. vim.fn.stdpath("config") .. "<CR><Cmd>edit .<CR>"),
         dashboard.button("q", "  Quit", "<Cmd>quit<CR>"),
       }

@@ -14,11 +14,11 @@ local config = {
         fg_color = "#82aaff",
       },
       inactive_tab = {
-        bg_color = "#24283b",
+        bg_color = "#1f2335",
         fg_color = "#828bb8",
       },
       new_tab = {
-        bg_color = "#24283b",
+        bg_color = "#1f2335",
         fg_color = "#959cbd",
       },
       inactive_tab_edge = "#24283b",
@@ -170,7 +170,8 @@ local config = {
   send_composed_key_when_right_alt_is_pressed = false,
   window_decorations = "RESIZE",
   window_frame = {
-    active_titlebar_bg = "#24283b",
+    active_titlebar_bg = "#1f2335",
+    inactive_titlebar_bg = "#1f2335",
     font = wezterm.font("Lekton"),
     font_size = 13,
   },
