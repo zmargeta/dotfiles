@@ -157,7 +157,6 @@ check_cleanup() {
 {{- $casks := list
     "1password-cli"
     "anaconda"
-    "arc"
     "docker"
     "font-exo"
     "font-fira-code"
@@ -190,8 +189,7 @@ check_cleanup() {
     "raindropio"
     "raycast"
     "todoist"
-    "wezterm"
-    "zed" }}
+    "wezterm" }}
 
 {{- if .personal }}
 {{- $casks = concat $casks (list
