@@ -47,6 +47,7 @@ return {
             },
           },
         },
+        rnix = {},
         pyright = {},
         rust_analyzer = {},
         ocamllsp = {},

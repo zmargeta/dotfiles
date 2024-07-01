@@ -12,7 +12,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "Y", "y$")
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+  group = vim.api.nvim_create_augroup("zmargeta", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
