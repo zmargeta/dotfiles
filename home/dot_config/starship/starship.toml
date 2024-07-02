@@ -193,9 +193,9 @@ disabled = false
 time_format = '%F %T'
 
 [character]
-success_symbol = '[](blue)'
-error_symbol = '[](red)'
-vimcmd_symbol = '[](blue)'
-vimcmd_replace_one_symbol = '[](purple)'
-vimcmd_replace_symbol = '[](purple)'
-vimcmd_visual_symbol = '[](yellow)'
+success_symbol = '[ ](blue)'
+error_symbol = '[ ](red)'
+vimcmd_symbol = '[ ](fg:black bg:blue)'
+vimcmd_replace_one_symbol = '[ ](fg:black bg:blue)'
+vimcmd_replace_symbol = '[ ](fg:black bg:blue)'
+vimcmd_visual_symbol = '[ ](fg:black bg:bright-purple)'
