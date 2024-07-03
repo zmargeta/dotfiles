@@ -13,12 +13,15 @@ test -d $HOME/.local/bin
 or mkdir -p $HOME/.local/bin
 fish_add_path -g $HOME/.local/bin
 
+test -d $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents
+and ln -sF $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents $HOME/Vaults
+
 test -d $HOME/.config/op
 or mkdir $HOME/.config/op
 
 {{ if eq .chezmoi.os "darwin" -}}
 test -f $HOME/.config/op/agent.sock
-or ln -sf "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" $HOME/.config/op/agent.sock
+or ln -sf $HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock $HOME/.config/op/agent.sock
 {{- end }}
 
 set -gx SSH_AUTH_SOCK $HOME/.config/op/agent.sock

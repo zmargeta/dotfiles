@@ -210,6 +210,9 @@
   if type -q ov
     alias less ov
   end
+  if test -d $HOME/Vaults/one-brain
+    alias vaultcd 'cd $HOME/Vaults/one-brain'
+  end
   if type -q thefuck
     set -x THEFUCK_OVERRIDDEN_ALIASES 'cd,chezmoi,coursier,nvim,ov'
   end
