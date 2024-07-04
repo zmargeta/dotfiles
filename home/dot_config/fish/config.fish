@@ -19,10 +19,10 @@ and ln -sF $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents $HOME/Va
 test -d $HOME/.config/op
 or mkdir $HOME/.config/op
 
-{{ if eq .chezmoi.os "darwin" -}}
-test -f $HOME/.config/op/agent.sock
-or ln -sf $HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock $HOME/.config/op/agent.sock
-{{- end }}
+if test $(uname) = "Darwin"
+  test -f $HOME/.config/op/agent.sock
+  or ln -sf $HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock $HOME/.config/op/agent.sock
+end
 
 set -gx SSH_AUTH_SOCK $HOME/.config/op/agent.sock
 
@@ -47,6 +47,6 @@ if status is-interactive
   function separate_prompt --on-event fish_postexec
     echo ""
   end
-  test -f $HOME/.config/fish/alias.fish
-  and source $HOME/.config/fish/alias.fish
+  test -f $HOME/.config/fish/aliases.fish
+  and source $HOME/.config/fish/aliases.fish
 end

@@ -87,20 +87,6 @@
       abbr -ag dotec! "$EDITOR $XDG_DATA_HOME/chezmoi/.chezmoi.toml.tmpl && dot init"
     end
   end
-{{- if eq .chezmoi.os "darwin" }}
-  if type -q brew
-    abbr -ag br brew
-    abbr -ag brc brew cleanup
-    abbr -ag brc! 'brew autoremove && brew cleanup'
-    abbr -ag brd brew desc --eval-all
-    abbr -ag bri brew install
-    abbr -ag brls brew list
-    abbr -ag brs brew search
-    abbr -ag bru brew uninstall
-    abbr -ag brU brew update
-    abbr -ag brU! 'brew update && brew upgrade'
-  end
-{{- end }}
   if type -q git
     abbr -ag g git
     abbr -ag ga git add
@@ -190,10 +176,10 @@
     abbr -ag dnp docker network prune
     abbr -ag dp docker push
     abbr -ag dP docker pull
-    abbr -ag dps 'docker ps --format \'table {{"{{.ID}}\\t{{.Names}}\\t{{.Image}}\\t{{.RunningFor}}\\t{{.Status}}"}}\''
-    abbr -ag dpsp 'docker ps --format \'table {{"{{.ID}}\\t{{.Names}}\\t{{.Ports}}"}}\''
-    abbr -ag dpsa 'docker ps -a --format \'table {{"{{.ID}}\\t{{.Names}}\\t{{.Image}}\\t{{.RunningFor}}\\t{{.Status}}"}}\''
-    abbr -ag dpsap 'docker ps -a --format \'table {{"{{.ID}}\\t{{.Names}}\\t{{.Ports}}"}}\''
+    abbr -ag dps 'docker ps --format \'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\''
+    abbr -ag dpsp 'docker ps --format \'table {{.ID}}\t{{.Names}}\t{{.Ports}}\''
+    abbr -ag dpsa 'docker ps -a --format \'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\''
+    abbr -ag dpsap 'docker ps -a --format \'table {{.ID}}\t{{.Names}}\t{{.Ports}}\''
     abbr -ag drm docker rm
     abbr -ag drm! docker rm -f
     abbr -ag drmi docker image rm
@@ -209,6 +195,20 @@
   end
   if type -q ov
     alias less ov
+  end
+  if test $(uname) = "Darwin"
+    if type -q brew
+      abbr -ag br brew
+      abbr -ag brc brew cleanup
+      abbr -ag brc! 'brew autoremove && brew cleanup'
+      abbr -ag brd brew desc --eval-all
+      abbr -ag bri brew install
+      abbr -ag brls brew list
+      abbr -ag brs brew search
+      abbr -ag bru brew uninstall
+      abbr -ag brU brew update
+      abbr -ag brU! 'brew update && brew upgrade'
+    end
   end
   if test -d $HOME/Vaults/one-brain
     alias vaultcd 'cd $HOME/Vaults/one-brain'
