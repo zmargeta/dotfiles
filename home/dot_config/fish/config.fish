@@ -13,9 +13,6 @@ test -d $HOME/.local/bin
 or mkdir -p $HOME/.local/bin
 fish_add_path -g $HOME/.local/bin
 
-test -d $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents
-and ln -sF $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents $HOME/Vaults
-
 test -d $HOME/.config/op
 or mkdir $HOME/.config/op
 
