@@ -164,7 +164,7 @@ local config = {
     },
   },
   leader = _LEADER,
-  line_height = 1.1,
+  line_height = 1.3,
   native_macos_fullscreen_mode = true,
   send_composed_key_when_left_alt_is_pressed = true,
   send_composed_key_when_right_alt_is_pressed = false,

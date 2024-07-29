@@ -12,6 +12,7 @@ return {
         }
       end,
       formatters_by_ft = {
+        javascript = { "standardjs" },
         lua = { "stylua" },
         nix = { "nixfmt" },
       },
