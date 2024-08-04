@@ -29,15 +29,22 @@ local config = {
   default_cursor_style = "BlinkingUnderline",
   disable_default_key_bindings = true,
   font = wezterm.font_with_fallback({
-    { family = "JuliaMono", weight = "Light", assume_emoji_presentation = false },
+    { family = "Lilex", weight = "Light" },
     { family = "JetBrains Mono", weight = "Regular" },
   }),
-  font_size = 12,
+  font_size = 13,
   font_rules = {
     {
       italic = true,
       font = wezterm.font_with_fallback({
-        { family = "JuliaMono", weight = "Light", style = "Normal", assume_emoji_presentation = false },
+        { family = "Lilex", weight = "Light", style = "Normal" },
+        { family = "JetBrains Mono", weight = "Regular", style = "Normal" },
+      }),
+    },
+    {
+      intensity = "Bold",
+      font = wezterm.font_with_fallback({
+        { family = "Lilex", weight = "Light", style = "Normal" },
         { family = "JetBrains Mono", weight = "Regular", style = "Normal" },
       }),
     },
