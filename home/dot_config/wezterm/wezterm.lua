@@ -29,7 +29,7 @@ local config = {
   default_cursor_style = "BlinkingUnderline",
   disable_default_key_bindings = true,
   font = wezterm.font_with_fallback({
-    { family = "Lilex", weight = "Light" },
+    { family = "Lilex", weight = "Light", harfbuzz_features = { "zero", "cv09", "cv10", "ss02", "cv11" } },
     { family = "JetBrains Mono", weight = "Regular" },
   }),
   font_size = 13,
@@ -37,14 +37,24 @@ local config = {
     {
       italic = true,
       font = wezterm.font_with_fallback({
-        { family = "Lilex", weight = "Light", style = "Normal" },
+        {
+          family = "Lilex",
+          weight = "Light",
+          style = "Normal",
+          harfbuzz_features = { "zero", "cv09", "cv10", "ss02", "cv11" },
+        },
         { family = "JetBrains Mono", weight = "Regular", style = "Normal" },
       }),
     },
     {
       intensity = "Bold",
       font = wezterm.font_with_fallback({
-        { family = "Lilex", weight = "Light", style = "Normal" },
+        {
+          family = "Lilex",
+          weight = "Light",
+          style = "Normal",
+          harfbuzz_features = { "zero", "cv09", "cv10", "ss02", "cv11" },
+        },
         { family = "JetBrains Mono", weight = "Regular", style = "Normal" },
       }),
     },
