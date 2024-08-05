@@ -71,8 +71,6 @@ check_cleanup() {
     "buildpacks/tap"
     "coursier/formulas"
     "homebrew/bundle"
-    "homebrew/cask-fonts"
-    "homebrew/cask-versions"
     "homebrew/services"
     "noborus/tap"
     "spring-io/tap"
@@ -140,7 +138,6 @@ check_cleanup() {
     "stylua"
     "subversion"
     "tealdeer"
-    "terraform"
     "thefuck"
     "tmux"
     "tokei"
@@ -198,7 +195,6 @@ check_cleanup() {
 
 {{- if .personal }}
 {{- $casks = concat $casks (list
-    "kindle"
     "prusaslicer"
     "utm" ) }}
 {{- else }}
@@ -219,7 +215,6 @@ check_cleanup() {
 
 {{- if .personal }}
 {{- $mas = merge $mas (dict
-    "Fantastical" "id: 975937182"
     "iMovie" "id: 408981434"
     "SnippetsLab" "id: 1006087419") }}
 {{- else }}
