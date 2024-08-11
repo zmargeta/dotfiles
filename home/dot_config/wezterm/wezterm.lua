@@ -29,7 +29,7 @@ local config = {
   default_cursor_style = "BlinkingUnderline",
   disable_default_key_bindings = true,
   font = wezterm.font_with_fallback({
-    { family = "Lilex", weight = "Light", harfbuzz_features = { "zero", "cv09", "cv10", "ss02", "cv11" } },
+    { family = "Lilex", weight = "ExtraLight", harfbuzz_features = { "zero", "cv09", "cv10", "ss02", "cv11" } },
     { family = "JetBrains Mono", weight = "Regular" },
   }),
   font_size = 12,
@@ -39,7 +39,7 @@ local config = {
       font = wezterm.font_with_fallback({
         {
           family = "Lilex",
-          weight = "Light",
+          weight = "ExtraLight",
           style = "Normal",
           harfbuzz_features = { "zero", "cv09", "cv10", "ss02", "cv11" },
         },
@@ -51,7 +51,7 @@ local config = {
       font = wezterm.font_with_fallback({
         {
           family = "Lilex",
-          weight = "Light",
+          weight = "ExtraLight",
           style = "Normal",
           harfbuzz_features = { "zero", "cv09", "cv10", "ss02", "cv11" },
         },
