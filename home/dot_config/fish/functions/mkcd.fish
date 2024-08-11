@@ -8,5 +8,5 @@ function mkcd -d 'Make and change directory'
     echo 'Usage: mkcd file_name'
     return 1
   end
-  mkdir -p -v -- $argv[1] && cd -- $argv[1]
+  mkdir -p -v -- $argv[1] && builtin cd -- $argv[1]
 end
