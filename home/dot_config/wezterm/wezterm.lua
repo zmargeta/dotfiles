@@ -59,6 +59,7 @@ local config = {
       }),
     },
   },
+  freestyle_load_target = "Light",
   front_end = "WebGpu",
   keys = {
     -- General
