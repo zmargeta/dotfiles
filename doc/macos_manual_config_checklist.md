@@ -38,7 +38,7 @@
 - Extensions > Window Management
     - [ ] Gap: Tiny (8px)
     - [ ] Enable Respect Stage Manager
-    - [ ] Almost Maximise > Percentage: 80%
+    - [ ] Almost Maximise > Percentage: 70%
 - Account
   - [ ] Log In with Apple Account
 - Advanced
@@ -79,6 +79,7 @@
   - [ ] Disable Animate opening applications
   - [ ] Disable Show recent applications in Dock
   - [ ] Enable Stage Manager
+  - [ ] Disable Show recent apps in Stage Manager
 - Displays
   - [ ] Select More Space
 - Touch ID & Password
