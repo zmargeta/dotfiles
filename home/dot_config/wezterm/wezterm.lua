@@ -32,7 +32,7 @@ local config = {
     { family = "Lilex", weight = "ExtraLight", harfbuzz_features = { "zero", "cv09", "cv10", "ss02", "cv11" } },
     { family = "JetBrains Mono", weight = "Regular" },
   }),
-  font_size = 12,
+  font_size = 13,
   font_rules = {
     {
       italic = true,
