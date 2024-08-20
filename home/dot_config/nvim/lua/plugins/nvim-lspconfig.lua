@@ -47,10 +47,6 @@ return {
             },
           },
         },
-        ocamllsp = {},
-        rnix = {},
-        rust_analyzer = {},
-        tsserver = {},
       }
       require("mason").setup()
       local ensure_installed = vim.tbl_keys(servers or {})
