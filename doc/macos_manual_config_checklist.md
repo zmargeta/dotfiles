@@ -72,7 +72,7 @@
     - [ ] Enable Raycast
 - Desktop & Dock
   - [ ] defaults write com.apple.dock 'tilesize' -int '48' && killall Dock
-  - [ ] Position on screen: Bottom
+  - [ ] Position on screen: Right
   - [ ] Minimise windows using: Scale Effect
   - [ ] Enable Minimise windows into application icon
   - [ ] Enable Automatically hide and show the Dock
@@ -110,27 +110,6 @@
   - [ ] Enable Always open in icon view
   - [ ] Sort by: Name
   - [ ] Click Use as defaults
-- [ ] Drag the $HOME/Development folder to Favourites
-
-##### Mail
-
-- General
-  - [ ] Default email reader: Spark
-
-##### Calendar
-
-- General
-  - [ ] Default calendar app: Fantastical
-
-##### Fantastical
-
-- Appearance
-  - [ ] Enable Hide Fantastical in menu bar
-- Accounts
-  - [ ] Enable work account
-  - [ ] Enable Google account
-  - [ ] Enable Todoist account
-  - [ ] Disable Reminders application
 
 ##### Safari
 
@@ -143,13 +122,6 @@
 - Autofill
   - [ ] Disable every entry
 
-##### Kitty
-
-- Application Icon
-  - [ ] Find kitty.app in /Applications, select it and press ⌘ i.
-  - [ ] Drag kitty-dark.icns onto the aplication icon in the kitty info pane.
-  - [ ] `rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock`
-
 ##### JetBrains Toolbox
 
 - [ ] Enable Update all tools automatically
@@ -160,7 +132,7 @@
 
 - Finder
 - Safari
-- Spark
+- Mail
 - Todoist
 - Obsidian
 - Music
