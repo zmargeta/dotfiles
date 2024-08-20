@@ -12,9 +12,10 @@ return {
         }
       end,
       formatters_by_ft = {
-        javascript = { "standardjs" },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
         lua = { "stylua" },
         nix = { "nixfmt" },
+        python = { "isort", "black" },
       },
     },
   },
