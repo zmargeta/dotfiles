@@ -38,11 +38,26 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
       local servers = {
+        eslint = {},
+        eslint_d = {},
+        luacheck = {},
         lua_ls = {
           settings = {
             Lua = {
               completion = {
                 callSnippet = "Replace",
+              },
+            },
+          },
+        },
+        pylint = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  maxLineLength = 120,
+                },
               },
             },
           },

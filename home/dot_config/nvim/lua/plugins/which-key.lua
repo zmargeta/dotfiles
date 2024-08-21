@@ -8,6 +8,7 @@ return {
       local telescope_extensions = require("telescope").extensions
       local harpoon = require("harpoon")
       local conform = require("conform")
+      local lint = require("lint")
       local gitsigns = require("gitsigns")
       which_key.setup({})
       which_key.register({
@@ -168,6 +169,12 @@ return {
               conform.format({ async = true, lsp_fallback = true })
             end,
             "Format buffer",
+          },
+          l = {
+            function()
+              lint.try_lint()
+            end,
+            "Lint buffer",
           },
           n = { vim.lsp.buf.rename, "Rename" },
           ["."] = { vim.lsp.buf.code_action, "Open the code actions menu" },
