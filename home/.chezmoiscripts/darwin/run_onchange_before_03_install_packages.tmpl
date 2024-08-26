@@ -76,7 +76,8 @@ check_cleanup() {
     "spring-io/tap"
     "sscotth/monoid"
     "txn2/tap"
-    "quarkusio/tap" }}
+    "quarkusio/tap"
+    "xo/xo" }}
 
 {{- if not .personal }}
 {{- $taps = concat $taps (list
@@ -93,7 +94,6 @@ check_cleanup() {
     "checkov"
     "chezmoi"
     "coursier"
-    "csvkit"
     "curl"
     "dash"
     "difftastic"
@@ -147,12 +147,14 @@ check_cleanup() {
     "thefuck"
     "tmux"
     "tokei"
+    "usql"
     "vivid"
     "volta"
     "wget"
     "yq"
     "zoe"
-    "zoxide" }}
+    "zoxide"
+    "xsv" }}
 
 {{- if not .personal }}
 {{- $brews = concat $brews (list
