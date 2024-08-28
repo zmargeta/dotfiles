@@ -113,6 +113,7 @@
     abbr -ag gcm git commit --message
     abbr -ag gcn! git commit --verbose --amend --no-edit
     abbr -ag gco git checkout
+    abbr -ag gcoi "git branch | rg -v '^\*' | fzf --height=20% --reverse --info=inline | xargs git checkout"
     abbr -ag gcor git checkout --recurse-submodules
     abbr -ag gcp git cherry-pick
     abbr -ag gcpa git cherry-pick --abort
