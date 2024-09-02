@@ -80,8 +80,6 @@
   - [ ] Disable Show recent applications in Dock
   - [ ] Enable Stage Manager
   - [ ] Disable Show recent apps in Stage Manager
-- Displays
-  - [ ] Select More Space
 - Touch ID & Password
   - [ ] Enable Apple Watch
 - Wallet & Apple Pay
