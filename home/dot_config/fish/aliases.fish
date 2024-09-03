@@ -191,6 +191,9 @@
     abbr -ag dv docker volume ls
     abbr -ag dvp docker volume prune
   end
+  if type -q bat
+    alias cat 'bat --style=plain'
+  end
   if type -q coursier
     alias cs coursier
   end
@@ -215,5 +218,5 @@
     alias vaultcd 'cd $HOME/Vaults/one-brain'
   end
   if type -q thefuck
-    set -x THEFUCK_OVERRIDDEN_ALIASES 'cd,chezmoi,coursier,nvim,ov'
+    set -x THEFUCK_OVERRIDDEN_ALIASES 'cat,cd,chezmoi,coursier,nvim,ov'
   end
