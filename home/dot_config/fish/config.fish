@@ -7,7 +7,7 @@ set -gx fish_cursor_replace block
 set -gx fish_cursor_unknown underscore
 set -gx fish_vi_force_cursor 1
 
-fish_config theme choose TokyoNight\ Storm
+fish_config theme choose Gruvbox\ Dark
 
 test -d $HOME/.local/bin
 or mkdir -p $HOME/.local/bin

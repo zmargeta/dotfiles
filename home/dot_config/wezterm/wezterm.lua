@@ -6,26 +6,39 @@ local act = wezterm.action
 local custom_act = require("actions")
 
 local config = {
-  color_scheme = "tokyonight_storm",
+  color_scheme = "gruvbox_material_dark_hard",
+  color_schemes = {
+    ["gruvbox_material_dark_hard"] = {
+      foreground = "#d4be98",
+      background = "#1d2021",
+      cursor_bg = "#d4be98",
+      cursor_border = "#d4be98",
+      cursor_fg = "#1d2021",
+      selection_bg = "#d4be98",
+      selection_fg = "#3c3836",
+      ansi = { "#1d2021", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98" },
+      brights = { "#eddeb5", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98" },
+    },
+  },
   colors = {
     tab_bar = {
       active_tab = {
-        bg_color = "#3b4261",
-        fg_color = "#82aaff",
+        bg_color = "#1d2021",
+        fg_color = "#a9b665",
       },
       inactive_tab = {
-        bg_color = "#1f2335",
-        fg_color = "#828bb8",
+        bg_color = "#1d2021",
+        fg_color = "#d4be98",
       },
       new_tab = {
-        bg_color = "#1f2335",
-        fg_color = "#959cbd",
+        bg_color = "#1d2021",
+        fg_color = "#d4be98",
       },
-      inactive_tab_edge = "#24283b",
+      inactive_tab_edge = "#1d2021",
     },
   },
-  command_palette_bg_color = "#3b4261",
-  command_palette_fg_color = "#82aaff",
+  command_palette_bg_color = "#1d2021",
+  command_palette_fg_color = "#d4be98",
   default_cursor_style = "BlinkingUnderline",
   disable_default_key_bindings = true,
   font = wezterm.font_with_fallback({
@@ -178,8 +191,8 @@ local config = {
   send_composed_key_when_right_alt_is_pressed = false,
   window_decorations = "RESIZE",
   window_frame = {
-    active_titlebar_bg = "#1f2335",
-    inactive_titlebar_bg = "#1f2335",
+    active_titlebar_bg = "#1d2021",
+    inactive_titlebar_bg = "#1d2021",
     font = wezterm.font("Lekton"),
     font_size = 13,
   },

@@ -1,6 +1,6 @@
 if type -q eza
   if type -q vivid
-    set -gx EZA_COLORS (vivid generate tokyonight-storm)
+    set -gx EZA_COLORS (vivid generate gruvbox-dark)
   end
   set -gx TIME_STYLE default
   alias la 'eza --long --binary --all'

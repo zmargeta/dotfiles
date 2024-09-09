@@ -16,7 +16,7 @@ return {
     },
     opts = {
       options = {
-        theme = "tokyonight",
+        theme = "gruvbox-material",
       },
       sections = {
         lualine_a = { "mode" },
