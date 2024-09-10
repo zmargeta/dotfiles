@@ -194,7 +194,7 @@ local config = {
     active_titlebar_bg = "#1d2021",
     inactive_titlebar_bg = "#1d2021",
     font = wezterm.font("Lekton"),
-    font_size = 13,
+    font_size = 12,
   },
   window_padding = {
     left = "1cell",
