@@ -42,7 +42,7 @@ local config = {
   default_cursor_style = "BlinkingUnderline",
   disable_default_key_bindings = true,
   font = wezterm.font_with_fallback({
-    { family = "CommitMono", weight = "Light" },
+    { family = "Lilex", weight = "Light" },
     { family = "JetBrains Mono", weight = "Regular" },
   }),
   font_size = 11,
@@ -50,14 +50,14 @@ local config = {
     {
       italic = true,
       font = wezterm.font_with_fallback({
-        { family = "CommitMono", weight = "Light", style = "Normal" },
+        { family = "Lilex", weight = "Light", style = "Normal" },
         { family = "JetBrains Mono", weight = "Regular", style = "Normal" },
       }),
     },
     {
       intensity = "Bold",
       font = wezterm.font_with_fallback({
-        { family = "CommitMono", weight = "Light", style = "Normal" },
+        { family = "Lilex", weight = "Light", style = "Normal" },
         { family = "JetBrains Mono", weight = "Regular", style = "Normal" },
       }),
     },
