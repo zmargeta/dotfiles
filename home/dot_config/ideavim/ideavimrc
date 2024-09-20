@@ -41,6 +41,7 @@ set visualbell
 set noerrorbells
 set highlightedyank
 set idearefactormode=keep
+set ideastatusicon=enabled
 
 let g:highlightedyank_highlight_duration="250"
 
