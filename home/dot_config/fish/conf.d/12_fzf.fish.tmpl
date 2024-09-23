@@ -10,19 +10,7 @@ if type -q fzf
 --marker= \
 --height=10% \
 --layout=default \
---scheme=default \
---color=bg+:#3c3836 \
---color=bg:#32302f \
---color=spinner:#fb4934 \
---color=hl:#928374 \
---color=fg:#ebdbb2 \
---color=header:#928374 \
---color=info:#8ec07c \
---color=pointer:#fb4934 \
---color=marker:#fb4934 \
---color=fg+:#ebdbb2 \
---color=prompt:#fb4934 \
---color=hl+:#fb4934"
+--scheme=default"
     set -gx FZF_CTRL_T_COMMAND 'fd --type f --strip-cwd-prefix $dir'
     set -gx FZF_CTRL_T_OPTS '--height=10% --layout=reverse-list --scheme=path'
     set -gx FZF_ALT_C_COMMAND 'fd --type d --strip-cwd-prefix $dir'
