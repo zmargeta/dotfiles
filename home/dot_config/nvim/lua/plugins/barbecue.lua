@@ -6,7 +6,7 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     opts = {
-      theme = "tokyonight",
+      theme = "gruvbox-material",
     },
   },
 }
