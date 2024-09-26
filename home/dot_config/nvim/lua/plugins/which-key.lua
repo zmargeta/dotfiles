@@ -12,14 +12,14 @@ return {
       local gitsigns = require("gitsigns")
       which_key.setup({})
       which_key.add({
-        { "g", group = "goto" },
-        { "gd", telescope_builtin.lsp_definitions, desc = "Goto definition" },
-        { "gD", vim.lsp.buf.declaration, desc = "Goto declaration" },
-        { "gI", telescope_builtin.lsp_implementations, desc = "Goto implementations" },
-        { "gT", telescope_builtin.lsp_type_definitions, desc = "Goto type definition" },
-        { "gr", telescope_builtin.lsp_references, desc = "Goto references" },
-        { "K", vim.lsp.buf.hover, desc = "Show documentation" },
-        { "]", group = "next" },
+        { "g", group = "Goto" },
+        { "gd", telescope_builtin.lsp_definitions, desc = "Definition" },
+        { "gD", vim.lsp.buf.declaration, desc = "Declaration" },
+        { "gI", telescope_builtin.lsp_implementations, desc = "Implementations" },
+        { "gT", telescope_builtin.lsp_type_definitions, desc = "Type definitions" },
+        { "gr", telescope_builtin.lsp_references, desc = "References" },
+        { "K", vim.lsp.buf.hover, desc = "Documentation" },
+        { "]", group = "Next" },
         {
           "]c",
           function()
@@ -29,10 +29,10 @@ return {
               gitsigns.nav_hunk("next")
             end
           end,
-          desc = "Next git change",
+          desc = "Git change",
         },
-        { "]d", vim.diagnostic.goto_next, desc = "Next diagnostic" },
-        { "[", group = "previous" },
+        { "]d", vim.diagnostic.goto_next, desc = "Diagnostic" },
+        { "[", group = "Previous" },
         {
           "[c",
           function()
@@ -42,11 +42,11 @@ return {
               gitsigns.nav_hunk("prev")
             end
           end,
-          desc = "Previous git change",
+          desc = "Git change",
         },
-        { "[d", vim.diagnostic.goto_prev, desc = "Previous diagnostic" },
+        { "[d", vim.diagnostic.goto_prev, desc = "Diagnostic" },
       }, {
-        { "<leader>b", group = "bookmarks" },
+        { "<leader>b", group = "Bookmarks" },
         {
           "<leader>ba",
           function()
@@ -66,10 +66,10 @@ return {
           function()
             harpoon:list():prev()
           end,
-          desc = "Previous harpoon bookmark",
+          desc = "Prev harpoon bookmark",
         },
         { "<leader>e", telescope_extensions.file_browser.file_browser, desc = "File explorer" },
-        { "<leader>f", group = "find" },
+        { "<leader>f", group = "Find" },
         {
           "<leader>fb",
           function()
@@ -100,7 +100,7 @@ return {
               })
               :find()
           end,
-          desc = "Find harpoon bookmarks",
+          desc = "Harpoon bookmarks",
         },
       })
       which_key.add({
@@ -109,25 +109,25 @@ return {
           function()
             telescope_builtin.find_files({ cwd = vim.fn.stdpath("config") })
           end,
-          desc = "Find config file",
+          desc = "Config file",
         },
-        { "<leader>fd", telescope_builtin.diagnostics, desc = "Find diagnostic" },
-        { "<leader>ff", telescope_builtin.find_files, desc = "Find file" },
-        { "<leader>fg", telescope_builtin.grep_string, desc = "Find word" },
-        { "<leader>fh", telescope_builtin.help_tags, desc = "Find help" },
-        { "<leader>fk", telescope_builtin.keymaps, desc = "Find keymap" },
-        { "<leader>fl", telescope_builtin.live_grep, desc = "Find by live grep" },
-        { "<leader>fp", telescope_extensions.project.project, desc = "Find project" },
+        { "<leader>fd", telescope_builtin.diagnostics, desc = "Diagnostic" },
+        { "<leader>ff", telescope_builtin.find_files, desc = "File" },
+        { "<leader>fg", telescope_builtin.grep_string, desc = "Word" },
+        { "<leader>fh", telescope_builtin.help_tags, desc = "Help" },
+        { "<leader>fk", telescope_builtin.keymaps, desc = "Keymap" },
+        { "<leader>fl", telescope_builtin.live_grep, desc = "Live grep" },
+        { "<leader>fp", telescope_extensions.project.project, desc = "Project" },
         { "<leader>fr", telescope_builtin.resume, desc = "Resume find" },
-        { "<leader>fs", telescope_builtin.lsp_document_symbols, desc = "Find document symbol" },
-        { "<leader>fS", telescope_builtin.lsp_workspace_symbols, desc = "Find workspace symbol" },
-        { "<leader>ft", telescope_builtin.builtin, desc = "Find telescope builtin" },
+        { "<leader>fs", telescope_builtin.lsp_document_symbols, desc = "Document symbol" },
+        { "<leader>fS", telescope_builtin.lsp_workspace_symbols, desc = "Workspace symbol" },
+        { "<leader>ft", telescope_builtin.builtin, desc = "Telescope builtin" },
         {
           "<leader>f.",
           function()
             telescope_builtin.oldfiles({ only_cwd = true })
           end,
-          desc = "Find recent file",
+          desc = "Recent file",
         },
         {
           "<leader>f/",
@@ -137,29 +137,29 @@ return {
               prompt_title = "Live grep in open files",
             })
           end,
-          desc = "Find by grep in open files",
+          desc = "Grep in open files",
         },
-        { "<leader>h", group = "git" },
-        { "<leader>hb", gitsigns.blame_line, desc = "Git blame line" },
-        { "<leader>hd", gitsigns.diffthis, desc = "Git diff against index" },
+        { "<leader>h", group = "Git" },
+        { "<leader>hb", gitsigns.blame_line, desc = "Blame line" },
+        { "<leader>hd", gitsigns.diffthis, desc = "Diff against index" },
         {
           "<leader>hD",
           function()
             gitsigns.diffthis("@")
           end,
-          desc = "Git diff against last commit",
+          desc = "Diff against last commit",
         },
-        { "<leader>hp", gitsigns.preview_hunk, desc = "Git preview hunk" },
-        { "<leader>hr", gitsigns.reset_hunk, desc = "Git reset hunk" },
-        { "<leader>hR", gitsigns.reset_buffer, desc = "Git reset buffer" },
-        { "<leader>hs", gitsigns.stage_hunk, desc = "Git stage hunk" },
-        { "<leader>hS", gitsigns.stage_buffer, desc = "Git stage buffer" },
-        { "<leader>hu", gitsigns.undo_stage_hunk, desc = "Git undo stage hunk" },
-        { "<leader>t", group = "toggle" },
-        { "<leader>tb", gitsigns.toggle_current_line_blame, desc = "Toggle show git current line blame" },
-        { "<leader>td", gitsigns.toggle_deleted, desc = "Toggle show git deleted" },
+        { "<leader>hp", gitsigns.preview_hunk, desc = "Preview hunk" },
+        { "<leader>hr", gitsigns.reset_hunk, desc = "Reset hunk" },
+        { "<leader>hR", gitsigns.reset_buffer, desc = "Reset buffer" },
+        { "<leader>hs", gitsigns.stage_hunk, desc = "Stage hunk" },
+        { "<leader>hS", gitsigns.stage_buffer, desc = "Stage buffer" },
+        { "<leader>hu", gitsigns.undo_stage_hunk, desc = "Undo stage hunk" },
+        { "<leader>t", group = "Toggle" },
+        { "<leader>tb", gitsigns.toggle_current_line_blame, desc = "Git current line blame" },
+        { "<leader>td", gitsigns.toggle_deleted, desc = "Git deleted" },
         { "<leader>o", "<Cmd>Oil<CR>", desc = "Open parent directory" },
-        { "<leader>r", group = "refactor" },
+        { "<leader>r", group = "Refactor" },
         {
           "<leader>rf",
           function()
@@ -190,27 +190,27 @@ return {
       })
       which_key.add({
         mode = { "v" },
-        { "<leader>h", group = "git" },
+        { "<leader>h", group = "Git" },
         {
           "<leader>hr",
           function()
             gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
           end,
-          desc = "Git reset hunk",
+          desc = "Reset hunk",
         },
         {
           "<leader>hs",
           function()
             gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
           end,
-          desc = "Git stage hunk",
+          desc = "Stage hunk",
         },
       })
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(event)
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           which_key.add({
-            { "<leader>t", group = "toggle" },
+            { "<leader>t", group = "Toggle" },
             {
               "<leader>th",
               function()
@@ -220,7 +220,7 @@ return {
                   vim.notify("toggling inline hints is not supported", "error")
                 end
               end,
-              desc = "Toggle show inlay hints",
+              desc = "Inlay hints",
             },
           })
         end,
