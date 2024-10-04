@@ -44,6 +44,7 @@ if status is-interactive
   function separate_prompt --on-event fish_postexec
     echo ""
   end
+
   test -f $HOME/.config/fish/aliases.fish
   and source $HOME/.config/fish/aliases.fish
 end
