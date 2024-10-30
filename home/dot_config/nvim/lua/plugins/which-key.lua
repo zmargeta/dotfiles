@@ -45,7 +45,8 @@ return {
           desc = "Git change",
         },
         { "[d", vim.diagnostic.goto_prev, desc = "Diagnostic" },
-      }, {
+      })
+      which_key.add({
         { "<leader>b", group = "Bookmarks" },
         {
           "<leader>ba",
