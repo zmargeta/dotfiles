@@ -11,12 +11,12 @@ end
 local function font()
   if wezterm.gui.get_appearance():find("Dark") then
     return wezterm.font_with_fallback({
-      { family = "Berkeley Mono", weight = "Regular" },
+      { family = "TX-02", weight = "Light" },
       { family = "JetBrains Mono", weight = "Regular", style = "Normal" },
     })
   else
     return wezterm.font_with_fallback({
-      { family = "Berkeley Mono", weight = "Regular" },
+      { family = "TX-02", weight = "Regular" },
       { family = "JetBrains Mono", weight = "Regular", style = "Normal" },
     })
   end
