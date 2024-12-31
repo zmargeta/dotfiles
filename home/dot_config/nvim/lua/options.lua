@@ -2,6 +2,7 @@ vim.opt.breakindent = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
 vim.opt.expandtab = true
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:hor20,r-cr-o:hor20"
 vim.opt.ignorecase = true
 vim.opt.inccommand = "split"
 vim.opt.laststatus = 3
