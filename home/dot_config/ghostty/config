@@ -7,7 +7,8 @@ font-style = SemiLight
 font-style-bold = false
 font-style-bold-italic = false
 font-style-italic = false
-keybind = global:alt+shift+ctrl+grave_accent=toggle_quick_terminal
+keybind = super+shift+u=write_selection_file:paste
+keybind = super+shift+y=write_screen_file:paste
 mouse-hide-while-typing = true
 shell-integration-features = no-cursor
 theme = light:catppuccin-latte,dark:catppuccin-macchiato
