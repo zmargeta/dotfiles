@@ -41,7 +41,7 @@ install_bundle() {
     DOT_WAIT_FLT=1 wait_succ 'Installing packages via Homebrew, done'
     return 0
   fi
-  "${DOT_HOMEBREW}" bundle install --no-lock --file "${BREWFILE}" >> "${DOT_LOGFILE}" 2>&1
+  "${DOT_HOMEBREW}" bundle install --file "${BREWFILE}" >> "${DOT_LOGFILE}" 2>&1
   rc=$?
   case $rc in
     0) DOT_WAIT_FLT=1 wait_succ 'Installing packages via Homebrew, done' ;;
@@ -212,8 +212,8 @@ check_cleanup() {
     "prusaslicer" ) }}
 {{- else }}
 {{- $casks = concat $casks (list
+    "insomnia"
     "microsoft-azure-storage-explorer"
-    "postman"
     "zoom") }}
 {{- end }}
 
