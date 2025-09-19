@@ -11,7 +11,7 @@ keybind = super+shift+u=write_selection_file:paste
 keybind = super+shift+y=write_screen_file:paste
 mouse-hide-while-typing = true
 shell-integration-features = no-cursor
-theme = light:catppuccin-latte,dark:catppuccin-macchiato
+theme = light:Catppuccin Latte,dark:Catppuccin Macchiato
 window-padding-x = 10
 window-padding-y = 10
 window-title-font-family = Lekton
