@@ -1,11 +1,11 @@
 fish_vi_key_bindings
 
-set -gx fish_cursor_default block
-set -gx fish_cursor_insert underscore
-set -gx fish_cursor_visual block
-set -gx fish_cursor_replace block
-set -gx fish_cursor_unknown underscore
-set -gx fish_vi_force_cursor 1
+set -gx fish_cursor_default block blink
+set -gx fish_cursor_insert line blink
+set -gx fish_cursor_visual block blink
+set -gx fish_cursor_replace underscore blink
+set -gx fish_cursor_replace_one underscore blink
+set -gx fish_cursor_unknown line blink
 
 fish_config theme choose fish\ default
 

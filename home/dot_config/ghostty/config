@@ -1,6 +1,8 @@
 adjust-cell-height = 30%
+adjust-cursor-thickness = 220%
 bold-is-bright = true
-cursor-style = underline
+cursor-style = bar
+cursor-style-blink = true
 font-family = TX-02
 font-size = 12
 font-style = SemiLight
