@@ -71,8 +71,6 @@ check_cleanup() {
     "buildpacks/tap"
     "cormacrelf/tap"
     "coursier/formulas"
-    "homebrew/bundle"
-    "homebrew/services"
     "noborus/tap"
     "spring-io/tap"
     "sscotth/monoid"
@@ -115,7 +113,6 @@ check_cleanup() {
     "gradle"
     "grpcurl"
     "helm"
-    "hey"
     "hurl"
     "isort"
     "istioctl"
@@ -159,8 +156,7 @@ check_cleanup() {
     "yq"
     "zoe"
     "zoxide"
-    "xh"
-    "xsv" }}
+    "xh" }}
 
 {{- if not .personal }}
 {{- $brews = concat $brews (list
@@ -176,7 +172,9 @@ check_cleanup() {
     "font-exo"
     "font-fira-code"
     "font-geist-mono"
-    "font-ibm-plex"
+    "font-ibm-plex-mono"
+    "font-ibm-plex-sans"
+    "font-ibm-plex-serif"
     "font-inter"
     "font-iosevka"
     "font-iosevka-term-nerd-font"
