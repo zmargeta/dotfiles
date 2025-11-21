@@ -36,13 +36,13 @@
 - Advanced
   - [ ] Config directory: ~/.config/leader-key
 - General
-  - [ ] Shortcut: ⌘ Space
+  - [ ] Shortcut: F12
   - [ ] Enable App Launch at login
 
 ##### Raycast
 
 - General
-  - [ ] Raycast Hotkey: ⌥ Space
+  - [ ] Raycast Hotkey: ⌘ Space
   - [ ] Disable Show Raycast in menu bar
 - Extensions > Window Management
     - [ ] Gap: Tiny (8px)

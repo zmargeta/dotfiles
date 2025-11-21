@@ -46,7 +46,7 @@
           "key" : "e",
           "label" : "Mail",
           "type" : "application",
-          "value" : "/Applications/Mail.app"
+          "value" : "/System/Applications/Mail.app"
         },
         {
           "iconPath" : "keyboard",
@@ -137,35 +137,35 @@
           "key" : "l",
           "label" : "Workspace 1",
           "type" : "command",
-          "value" : "aerospace workspace 1"
+          "value" : "aerospace workspace 0"
         },
         {
           "iconPath" : "macwindow",
           "key" : "u",
           "label" : "Workspace 2",
           "type" : "command",
-          "value" : "aerospace workspace 2"
+          "value" : "aerospace workspace 1"
         },
         {
           "iconPath" : "macwindow",
           "key" : "y",
           "label" : "Workspace 3",
           "type" : "command",
-          "value" : "aerospace workspace 3"
+          "value" : "aerospace workspace 2"
         },
         {
           "iconPath" : "macwindow",
           "key" : ";",
           "label" : "Workspace 4",
           "type" : "command",
-          "value" : "aerospace workspace 4"
+          "value" : "aerospace workspace 3"
         },
         {
           "iconPath" : "macwindow",
           "key" : "\\",
           "label" : "Workspace 10",
           "type" : "command",
-          "value" : "aerospace workspace 10"
+          "value" : "aerospace workspace S"
         },
         {
           "actions" : [
@@ -209,35 +209,35 @@
               "key" : "l",
               "label" : "Workspace 1",
               "type" : "command",
-              "value" : "aerospace move-node-to-workspace 1"
+              "value" : "aerospace move-node-to-workspace 0"
             },
             {
               "iconPath" : "macwindow",
               "key" : "u",
               "label" : "Workspace 2",
               "type" : "command",
-              "value" : "aerospace move-node-to-workspace 2"
+              "value" : "aerospace move-node-to-workspace 1"
             },
             {
               "iconPath" : "macwindow",
               "key" : "y",
               "label" : "Workspace 3",
               "type" : "command",
-              "value" : "aerospace move-node-to-workspace 3"
+              "value" : "aerospace move-node-to-workspace 2"
             },
             {
               "iconPath" : "macwindow",
               "key" : ";",
               "label" : "Workspace 4",
               "type" : "command",
-              "value" : "aerospace move-node-to-workspace 4"
+              "value" : "aerospace move-node-to-workspace 3"
             },
             {
               "iconPath" : "macwindow",
               "key" : "\\",
               "label" : "Workspace 10",
               "type" : "command",
-              "value" : "aerospace move-node-to-workspace 10"
+              "value" : "aerospace move-node-to-workspace S"
             }
           ],
           "key" : "m",
@@ -252,6 +252,13 @@
               "label" : "Accordion",
               "type" : "command",
               "value" : "aerospace layout accordion horizontal vertical"
+            },
+            {
+              "iconPath" : "command",
+              "key" : "r",
+              "label" : "Resize Mode",
+              "type" : "command",
+              "value" : "aerospace mode resize"
             },
             {
               "iconPath" : "command",
