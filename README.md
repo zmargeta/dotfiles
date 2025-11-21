@@ -58,7 +58,7 @@ I am primarily using the [Fish shell](https://fishshell.com), including some [cu
 
 Prompt is displayed by [Starship](https://starship.rs) and configured [here](./home/dot_config/starship/starship.toml).
 
-As far as theming goes, everything **should** be themed using the [Tokyo Night Storm](https://github.com/folke/tokyonight.nvim) theme.
+As far as theming goes, everything **should** be themed using the [Catppuccin](https://github.com/catppuccin) themes.
 
 ## License
 

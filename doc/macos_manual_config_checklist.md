@@ -2,6 +2,7 @@
 
 ##### Fonts
 
+- [ ] Install TX-02
 - [ ] Install CommitMono
 - [ ] Install PragmataPro
 - [ ] Install Operator Mono
@@ -10,7 +11,7 @@
 ##### 1Password
 
 - General > Keyboard shortcuts
-    - [ ] Show Quick Access: ⌥ ⌘ Space
+  - [ ] Show Quick Access: ⌥ ⌘ P
 - Appearance
   - [ ] Density: Comfortable
 - Security > Unlock
@@ -30,10 +31,18 @@
 
 - [ ] `bash -c "$(curl -fsSL https://raw.githubusercontent.com/zmargeta/dotfiles/main/install)"`
 
+##### Leader Key
+
+- Advanced
+  - [ ] Config directory: ~/.config/leader-key
+- General
+  - [ ] Shortcut: ⌘ Space
+  - [ ] Enable App Launch at login
+
 ##### Raycast
 
 - General
-  - [ ] Raycast Hotkey: ⌘ Space
+  - [ ] Raycast Hotkey: ⌥ Space
   - [ ] Disable Show Raycast in menu bar
 - Extensions > Window Management
     - [ ] Gap: Tiny (8px)
@@ -78,8 +87,9 @@
   - [ ] Enable Automatically hide and show the Dock
   - [ ] Disable Animate opening applications
   - [ ] Disable Show recent applications in Dock
-  - [ ] Enable Stage Manager
+  - [ ] Disable Stage Manager
   - [ ] Disable Show recent apps in Stage Manager
+  - [ ] Disable Displays have separate Spaces in Mission Control
 - Touch ID & Password
   - [ ] Enable Apple Watch
 - Wallet & Apple Pay
