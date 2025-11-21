@@ -1,0 +1,274 @@
+{
+  "actions" : [
+    {
+      "iconPath" : "globe.badge.chevron.backward",
+      "key" : "b",
+      "label" : "Browser",
+      "type" : "application",
+      "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
+    },
+    {
+      "iconPath" : "keyboard",
+      "key" : "i",
+      "label" : "IDE",
+      "type" : "application",
+      "value" : "~/Applications/IntelliJ IDEA Ultimate.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "h",
+          "label" : "Home",
+          "type" : "folder",
+          "value" : "~"
+        },
+        {
+          "key" : "d",
+          "type" : "folder",
+          "value" : "~/Downloads"
+        }
+      ],
+      "key" : "g",
+      "label" : "Go",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "iconPath" : "globe.badge.chevron.backward",
+          "key" : "b",
+          "label" : "Browser",
+          "type" : "application",
+          "value" : "/Applications/Safari.app"
+        },
+        {
+          "iconPath" : "mail",
+          "key" : "e",
+          "label" : "Mail",
+          "type" : "application",
+          "value" : "/Applications/Mail.app"
+        },
+        {
+          "iconPath" : "keyboard",
+          "key" : "i",
+          "label" : "IDE",
+          "type" : "application",
+          "value" : "~/Applications/IntelliJ IDEA Ultimate.app"
+        },
+        {
+          "iconPath" : "bubble.left.and.text.bubble.right",
+          "key" : "m",
+          "label" : "Messages",
+          "type" : "application",
+          "value" : "/System/Applications/Messages.app"
+        },
+        {
+          "key" : "p",
+          "label" : "Music",
+          "type" : "application",
+          "value" : "/System/Applications/Music.app"
+        },
+        {
+          "iconPath" : "apple.terminal",
+          "key" : "t",
+          "label" : "Terminal",
+          "type" : "application",
+          "value" : "/Applications/Ghostty.app"
+        },
+        {
+          "iconPath" : "suitcase",
+          "key" : "v",
+          "label" : "Vault",
+          "type" : "application",
+          "value" : "/Applications/Obsidian.app"
+        }
+      ],
+      "key" : "o",
+      "label" : "Open",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "iconPath" : "face.smiling",
+          "key" : "e",
+          "label" : "Emoji",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+        },
+        {
+          "iconPath" : "party.popper.fill",
+          "key" : "p",
+          "label" : "Confetti",
+          "type" : "url",
+          "value" : "raycast://confetti"
+        }
+      ],
+      "key" : "r",
+      "label" : "Raycast",
+      "type" : "group"
+    },
+    {
+      "iconPath" : "apple.terminal",
+      "key" : "t",
+      "label" : "Terminal",
+      "type" : "application",
+      "value" : "/Applications/Ghostty.app"
+    },
+    {
+      "iconPath" : "suitcase",
+      "key" : "v",
+      "label" : "Vault",
+      "type" : "application",
+      "value" : "/Applications/Obsidian.app"
+    },
+    {
+      "actions" : [
+        {
+          "iconPath" : "macwindow",
+          "key" : "l",
+          "label" : "Workspace 1",
+          "type" : "command",
+          "value" : "aerospace workspace 1"
+        },
+        {
+          "iconPath" : "macwindow",
+          "key" : "u",
+          "label" : "Workspace 2",
+          "type" : "command",
+          "value" : "aerospace workspace 2"
+        },
+        {
+          "iconPath" : "macwindow",
+          "key" : "y",
+          "label" : "Workspace 3",
+          "type" : "command",
+          "value" : "aerospace workspace 3"
+        },
+        {
+          "iconPath" : "macwindow",
+          "key" : ";",
+          "label" : "Workspace 4",
+          "type" : "command",
+          "value" : "aerospace workspace 4"
+        },
+        {
+          "iconPath" : "macwindow",
+          "key" : "\\",
+          "label" : "Workspace 10",
+          "type" : "command",
+          "value" : "aerospace workspace 10"
+        },
+        {
+          "actions" : [
+            {
+              "iconPath" : "macwindow.badge.plus",
+              "key" : "m",
+              "label" : "Left",
+              "type" : "command",
+              "value" : "aerospace join-with left"
+            },
+            {
+              "iconPath" : "macwindow.badge.plus",
+              "key" : "n",
+              "label" : "Down",
+              "type" : "command",
+              "value" : "aerospace join-with down"
+            },
+            {
+              "iconPath" : "macwindow.badge.plus",
+              "key" : "e",
+              "label" : "Up",
+              "type" : "command",
+              "value" : "aerospace join-with up"
+            },
+            {
+              "iconPath" : "macwindow.badge.plus",
+              "key" : "i",
+              "label" : "Right",
+              "type" : "command",
+              "value" : "aerospace join-with right"
+            }
+          ],
+          "key" : "j",
+          "label" : "Join",
+          "type" : "group"
+        },
+        {
+          "actions" : [
+            {
+              "iconPath" : "macwindow",
+              "key" : "l",
+              "label" : "Workspace 1",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 1"
+            },
+            {
+              "iconPath" : "macwindow",
+              "key" : "u",
+              "label" : "Workspace 2",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 2"
+            },
+            {
+              "iconPath" : "macwindow",
+              "key" : "y",
+              "label" : "Workspace 3",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 3"
+            },
+            {
+              "iconPath" : "macwindow",
+              "key" : ";",
+              "label" : "Workspace 4",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 4"
+            },
+            {
+              "iconPath" : "macwindow",
+              "key" : "\\",
+              "label" : "Workspace 10",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 10"
+            }
+          ],
+          "key" : "m",
+          "label" : "Move",
+          "type" : "group"
+        },
+        {
+          "actions" : [
+            {
+              "iconPath" : "uiwindow.split.2x1",
+              "key" : "a",
+              "label" : "Accordion",
+              "type" : "command",
+              "value" : "aerospace layout accordion horizontal vertical"
+            },
+            {
+              "iconPath" : "command",
+              "key" : "s",
+              "label" : "Service Mode",
+              "type" : "command",
+              "value" : "aerospace mode service"
+            },
+            {
+              "iconPath" : "uiwindow.split.2x1",
+              "key" : "t",
+              "label" : "Tiles",
+              "type" : "command",
+              "value" : "aerospace layout tiles horizontal vertical"
+            }
+          ],
+          "key" : "t",
+          "label" : "Toggle",
+          "type" : "group"
+        }
+      ],
+      "key" : "w",
+      "label" : "Window",
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}
