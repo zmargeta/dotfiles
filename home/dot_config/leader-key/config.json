@@ -63,6 +63,7 @@
           "value" : "/System/Applications/Messages.app"
         },
         {
+          "iconPath" : "music.note.list",
           "key" : "p",
           "label" : "Music",
           "type" : "application",
@@ -102,6 +103,13 @@
           "label" : "Confetti",
           "type" : "url",
           "value" : "raycast://confetti"
+        },
+        {
+          "iconPath" : "apple.logo",
+          "key" : "r",
+          "label" : "Run",
+          "type" : "application",
+          "value" : "/Applications/Raycast.app"
         }
       ],
       "key" : "r",

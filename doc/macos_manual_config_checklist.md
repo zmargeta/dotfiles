@@ -90,6 +90,7 @@
   - [ ] Disable Stage Manager
   - [ ] Disable Show recent apps in Stage Manager
   - [ ] Disable Displays have separate Spaces in Mission Control
+  - [ ] Enable Group windows by application in Mission Control
 - Touch ID & Password
   - [ ] Enable Apple Watch
 - Wallet & Apple Pay
