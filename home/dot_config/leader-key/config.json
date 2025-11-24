@@ -8,29 +8,18 @@
       "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
     },
     {
+      "iconPath" : "magnifyingglass",
+      "key" : "g",
+      "label" : "Go",
+      "type" : "application",
+      "value" : "/Applications/Alfred 5.app"
+    },
+    {
       "iconPath" : "keyboard",
       "key" : "i",
       "label" : "IDE",
       "type" : "application",
       "value" : "~/Applications/IntelliJ IDEA Ultimate.app"
-    },
-    {
-      "actions" : [
-        {
-          "key" : "h",
-          "label" : "Home",
-          "type" : "folder",
-          "value" : "~"
-        },
-        {
-          "key" : "d",
-          "type" : "folder",
-          "value" : "~/Downloads"
-        }
-      ],
-      "key" : "g",
-      "label" : "Go",
-      "type" : "group"
     },
     {
       "actions" : [
@@ -89,34 +78,6 @@
       "type" : "group"
     },
     {
-      "actions" : [
-        {
-          "iconPath" : "face.smiling",
-          "key" : "e",
-          "label" : "Emoji",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-        },
-        {
-          "iconPath" : "party.popper.fill",
-          "key" : "p",
-          "label" : "Confetti",
-          "type" : "url",
-          "value" : "raycast://confetti"
-        },
-        {
-          "iconPath" : "apple.logo",
-          "key" : "r",
-          "label" : "Run",
-          "type" : "application",
-          "value" : "/Applications/Raycast.app"
-        }
-      ],
-      "key" : "r",
-      "label" : "Raycast",
-      "type" : "group"
-    },
-    {
       "iconPath" : "apple.terminal",
       "key" : "t",
       "label" : "Terminal",
@@ -135,35 +96,63 @@
         {
           "iconPath" : "macwindow",
           "key" : "l",
-          "label" : "Workspace 1",
+          "label" : "Workspace 0",
           "type" : "command",
           "value" : "aerospace workspace 0"
         },
         {
           "iconPath" : "macwindow",
           "key" : "u",
-          "label" : "Workspace 2",
+          "label" : "Workspace 1",
           "type" : "command",
           "value" : "aerospace workspace 1"
         },
         {
           "iconPath" : "macwindow",
           "key" : "y",
-          "label" : "Workspace 3",
+          "label" : "Workspace 2",
           "type" : "command",
           "value" : "aerospace workspace 2"
         },
         {
           "iconPath" : "macwindow",
           "key" : ";",
-          "label" : "Workspace 4",
+          "label" : "Workspace 3",
           "type" : "command",
           "value" : "aerospace workspace 3"
         },
         {
           "iconPath" : "macwindow",
-          "key" : "\\",
-          "label" : "Workspace 10",
+          "key" : "p",
+          "label" : "Workspace 4",
+          "type" : "command",
+          "value" : "aerospace workspace 4"
+        },
+        {
+          "iconPath" : "macwindow",
+          "key" : "f",
+          "label" : "Workspace 5",
+          "type" : "command",
+          "value" : "aerospace workspace 5"
+        },
+        {
+          "iconPath" : "macwindow",
+          "key" : "w",
+          "label" : "Workspace 6",
+          "type" : "command",
+          "value" : "aerospace workspace 6"
+        },
+        {
+          "iconPath" : "macwindow",
+          "key" : "q",
+          "label" : "Workspace 7",
+          "type" : "command",
+          "value" : "aerospace workspace 7"
+        },
+        {
+          "iconPath" : "macwindow",
+          "key" : "j",
+          "label" : "Workspace S",
           "type" : "command",
           "value" : "aerospace workspace S"
         },
@@ -198,8 +187,8 @@
               "value" : "aerospace join-with right"
             }
           ],
-          "key" : "j",
-          "label" : "Join",
+          "key" : "g",
+          "label" : "Group",
           "type" : "group"
         },
         {
@@ -207,35 +196,63 @@
             {
               "iconPath" : "macwindow",
               "key" : "l",
-              "label" : "Workspace 1",
+              "label" : "Workspace 0",
               "type" : "command",
               "value" : "aerospace move-node-to-workspace 0"
             },
             {
               "iconPath" : "macwindow",
               "key" : "u",
-              "label" : "Workspace 2",
+              "label" : "Workspace 1",
               "type" : "command",
               "value" : "aerospace move-node-to-workspace 1"
             },
             {
               "iconPath" : "macwindow",
               "key" : "y",
-              "label" : "Workspace 3",
+              "label" : "Workspace 2",
               "type" : "command",
               "value" : "aerospace move-node-to-workspace 2"
             },
             {
               "iconPath" : "macwindow",
               "key" : ";",
-              "label" : "Workspace 4",
+              "label" : "Workspace 3",
               "type" : "command",
               "value" : "aerospace move-node-to-workspace 3"
             },
             {
               "iconPath" : "macwindow",
-              "key" : "\\",
-              "label" : "Workspace 10",
+              "key" : "p",
+              "label" : "Workspace 4",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 4"
+            },
+            {
+              "iconPath" : "macwindow",
+              "key" : "f",
+              "label" : "Workspace 5",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 5"
+            },
+            {
+              "iconPath" : "macwindow",
+              "key" : "w",
+              "label" : "Workspace 6",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 6"
+            },
+            {
+              "iconPath" : "macwindow",
+              "key" : "q",
+              "label" : "Workspace 7",
+              "type" : "command",
+              "value" : "aerospace move-node-to-workspace 7"
+            },
+            {
+              "iconPath" : "macwindow",
+              "key" : "j",
+              "label" : "Workspace S",
               "type" : "command",
               "value" : "aerospace move-node-to-workspace S"
             }
@@ -248,6 +265,13 @@
           "actions" : [
             {
               "iconPath" : "uiwindow.split.2x1",
+              "key" : "t",
+              "label" : "Tiles",
+              "type" : "command",
+              "value" : "aerospace layout tiles horizontal vertical"
+            },
+            {
+              "iconPath" : "uiwindow.split.2x1",
               "key" : "a",
               "label" : "Accordion",
               "type" : "command",
@@ -256,7 +280,6 @@
             {
               "iconPath" : "command",
               "key" : "r",
-              "label" : "Resize Mode",
               "type" : "command",
               "value" : "aerospace mode resize"
             },
@@ -266,13 +289,6 @@
               "label" : "Service Mode",
               "type" : "command",
               "value" : "aerospace mode service"
-            },
-            {
-              "iconPath" : "uiwindow.split.2x1",
-              "key" : "t",
-              "label" : "Tiles",
-              "type" : "command",
-              "value" : "aerospace layout tiles horizontal vertical"
             }
           ],
           "key" : "t",

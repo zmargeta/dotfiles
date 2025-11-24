@@ -1,0 +1,65 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 8,
+      "subtext" : {
+        "size" : 13,
+        "colorSelected" : "#504E4FFF",
+        "font" : "System",
+        "color" : "#00000065"
+      },
+      "shortcut" : {
+        "size" : 11,
+        "colorSelected" : "#F1F1F17F",
+        "font" : "System Light",
+        "color" : "#595A587F"
+      },
+      "backgroundSelected" : "#00000015",
+      "text" : {
+        "size" : 17,
+        "colorSelected" : "#1C1C1CFF",
+        "font" : "System",
+        "color" : "#1F1F1FFF"
+      },
+      "iconPaddingHorizontal" : 10,
+      "roundness" : 18,
+      "paddingVertical" : 8,
+      "iconSize" : 40
+    },
+    "search" : {
+      "backgroundSelected" : "#7D7F7F26",
+      "paddingHorizontal" : 8,
+      "spacing" : 10,
+      "text" : {
+        "size" : 30,
+        "colorSelected" : "#1F1F1FFF",
+        "font" : "System",
+        "color" : "#1F1F1FFF"
+      },
+      "background" : "#00000000",
+      "roundness" : 0,
+      "paddingVertical" : 0
+    },
+    "window" : {
+      "color" : "#FEFEFE00",
+      "paddingHorizontal" : 11,
+      "width" : 618,
+      "borderPadding" : 0,
+      "borderColor" : "#FEFFFE7F",
+      "blur" : 0,
+      "roundness" : 27,
+      "paddingVertical" : 10
+    },
+    "credit" : "mayuzumi",
+    "visualEffectMode" : 1,
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#00000058",
+      "thickness" : 6
+    },
+    "name" : "Taheo Light"
+  }
+}
