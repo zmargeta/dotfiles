@@ -31,6 +31,12 @@
           "value" : "/Applications/Safari.app"
         },
         {
+          "iconPath" : "video",
+          "key" : "d",
+          "type" : "application",
+          "value" : "/Applications/DaVinci Resolve/DaVinci Resolve.app"
+        },
+        {
           "iconPath" : "mail",
           "key" : "e",
           "label" : "Mail",
