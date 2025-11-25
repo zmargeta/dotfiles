@@ -25,14 +25,14 @@ S = "secondary"
 [mode.main.binding]
 ctrl-alt-cmd-shift-t = "layout tiles horizontal vertical"
 ctrl-alt-cmd-shift-a = "layout accordion horizontal vertical"
-ctrl-alt-cmd-shift-m = "focus left"
-ctrl-alt-cmd-shift-n = "focus down"
-ctrl-alt-cmd-shift-e = "focus up"
-ctrl-alt-cmd-shift-i = "focus right"
-ctrl-alt-shift-m = "move left"
-ctrl-alt-shift-n = "move down"
-ctrl-alt-shift-e = "move up"
-ctrl-alt-shift-i = "move right"
+ctrl-alt-cmd-shift-left = "focus left"
+ctrl-alt-cmd-shift-down = "focus down"
+ctrl-alt-cmd-shift-up = "focus up"
+ctrl-alt-cmd-shift-right = "focus right"
+ctrl-alt-shift-left = "move left"
+ctrl-alt-shift-down = "move down"
+ctrl-alt-shift-up = "move up"
+ctrl-alt-shift-right = "move right"
 ctrl-alt-cmd-shift-minus = "resize smart -50"
 ctrl-alt-cmd-shift-equal = "resize smart +50"
 ctrl-alt-cmd-shift-l = "workspace 0"
@@ -62,10 +62,10 @@ esc = ["reload-config", "mode main"]
 r = ["flatten-workspace-tree", "mode main"]
 f = ["layout floating tiling", "mode main"]
 backspace = ["close-all-windows-but-current", "mode main"]
-m = ["join-with left", "mode main"]
-n = ["join-with down", "mode main"]
-e = ["join-with up", "mode main"]
-i = ["join-with right", "mode main"]
+left = ["join-with left", "mode main"]
+down = ["join-with down", "mode main"]
+up = ["join-with up", "mode main"]
+right = ["join-with right", "mode main"]
 
 [mode.resize.binding]
 esc = ["reload-config", "mode main"]
