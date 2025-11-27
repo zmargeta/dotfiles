@@ -12,6 +12,7 @@ return {
         "lua",
         "luadoc",
         "markdown",
+        "markdown_inline",
         "ocaml",
         "python",
         "regex",
