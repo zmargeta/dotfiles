@@ -193,8 +193,8 @@ disabled = false
 time_format = '%F %T'
 
 [character]
-success_symbol = '[:](blue)'
-error_symbol = '[!](red)'
+success_symbol = '[</>](blue)'
+error_symbol = '[<!>](red)'
 vimcmd_symbol = '[ N ](fg:#ffffff bg:blue)'
 vimcmd_replace_one_symbol = '[ R ](fg:#ffffff bg:red)'
 vimcmd_replace_symbol = '[ R ](fg:#ffffff bg:red)'

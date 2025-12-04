@@ -4,6 +4,7 @@ bold-is-bright = true
 cursor-style = bar
 cursor-style-blink = true
 font-family = TX-02
+font-feature = -calt, -liga, -dlig
 font-size = 12
 font-style = SemiLight
 font-style-bold = false
