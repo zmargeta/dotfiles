@@ -58,7 +58,7 @@ check_cleanup() {
     return 1
   fi
   DOT_WAIT_FLT=1 wait_strt 'Removing non-listed packages'
-  "${DOT_HOMEBREW}" bundle cleanup --force --zap --file "${BREWFILE}" >> "${DOT_LOGFILE}" 2>&1
+  "${DOT_HOMEBREW}" bundle cleanup --force --file "${BREWFILE}" >> "${DOT_LOGFILE}" 2>&1
   local rc=$?
   case $rc in
     0) DOT_WAIT_FLT=1 wait_succ 'Removing non-listed packages, done' ;;
@@ -67,109 +67,48 @@ check_cleanup() {
 }
 
 {{- $taps := list
-    "adevinta/homebrew-zoe"
-    "buildpacks/tap"
     "cormacrelf/tap"
     "coursier/formulas"
     "nikitabobko/tap"
     "noborus/tap"
-    "spring-io/tap"
     "sscotth/monoid"
     "txn2/tap"
-    "quarkusio/tap"
     "wader/tap"
     "xo/xo" }}
 
-{{- if not .personal }}
-{{- $taps = concat $taps (list
-    "azure/kubelogin") }}
-{{- end }}
-
 {{- $brews := list
     "atuin"
-    "awscli"
-    "azcopy"
-    "azure-cli"
     "bat"
-    "black"
-    "buildifier"
-    "checkov"
     "chezmoi"
-    "coursier"
     "curl"
     "dash"
     "dark-notify"
-    "difftastic"
-    "direnv"
-    "dive"
     "eza"
     "fd"
     "fish"
     "fortune"
-    "fq"
     "fx"
     "fzf"
-    "gh"
     "git"
-    "gradle"
-    "grpcurl"
-    "helm"
-    "hurl"
-    "isort"
-    "istioctl"
     "jq"
-    "k6"
-    "k9s"
-    "kubectl"
-    "kubefwd"
-    "lima"
-    "lua"
-    "luarocks"
     "macchina"
     "mas"
-    "micronaut"
+    "mise"
     "neovim"
-    "opam"
     "ov"
-    "pack"
-    "poetry"
-    "prettier"
-    "prettierd"
-    "pumba"
-    "quarkus"
     "ripgrep"
     "sd"
-    "skaffold"
-    "skopeo"
-    "spring-boot"
     "starship"
     "stow"
-    "stylua"
-    "subversion"
     "tealdeer"
     "thefuck"
-    "tmux"
-    "tokei"
-    "usql"
     "vivid"
-    "volta"
-    "wget"
-    "yq"
-    "zoe"
-    "zoxide"
-    "xh" }}
-
-{{- if not .personal }}
-{{- $brews = concat $brews (list
-    "ansible"
-    "kubelogin") }}
-{{- end }}
+    "zoxide" }}
 
 {{- $casks := list
     "1password-cli"
     "aerospace"
     "alfred"
-    "anaconda"
     "docker-desktop"
     "font-exo"
     "font-fira-code"
@@ -217,7 +156,6 @@ check_cleanup() {
 {{- else }}
 {{- $casks = concat $casks (list
     "insomnia"
-    "microsoft-azure-storage-explorer"
     "zoom") }}
 {{- end }}
 

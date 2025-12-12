@@ -31,11 +31,6 @@ if type -q nvim
   set -gx VISUAL (which nvim)
 end
 
-if type -q volta
-  set -gx VOLTA_HOME $HOME/.volta
-  fish_add_path $VOLTA_HOME/bin
-end
-
 if type -q ov
   set -gx PAGER (which ov)
 end

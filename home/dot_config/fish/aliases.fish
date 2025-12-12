@@ -194,9 +194,6 @@
   if type -q bat
     alias cat 'bat --style=plain'
   end
-  if type -q coursier
-    alias cs coursier
-  end
   if type -q ov
     alias less ov
   end
