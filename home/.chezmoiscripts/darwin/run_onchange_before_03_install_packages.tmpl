@@ -144,7 +144,6 @@ check_cleanup() {
     "jetbrains-toolbox"
     "leader-key"
     "obsidian"
-    "orbstack"
     "raindropio"
     "superkey"
     "wezterm"
@@ -152,9 +151,11 @@ check_cleanup() {
 
 {{- if .personal }}
 {{- $casks = concat $casks (list
+    "orbstack"
     "prusaslicer" ) }}
 {{- else }}
 {{- $casks = concat $casks (list
+    "docker-desktop"
     "insomnia"
     "zoom") }}
 {{- end }}
