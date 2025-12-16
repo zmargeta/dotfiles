@@ -14,7 +14,7 @@ keybind = super+shift+u=write_selection_file:paste
 keybind = super+shift+y=write_screen_file:paste
 mouse-hide-while-typing = true
 shell-integration-features = no-cursor
-theme = light:Catppuccin Latte,dark:Catppuccin Macchiato
+theme = light:Nvim Light,dark:Nvim Dark
 window-padding-x = 10
 window-padding-y = 10
 window-title-font-family = Lekton

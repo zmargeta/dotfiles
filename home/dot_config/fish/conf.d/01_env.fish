@@ -22,11 +22,7 @@ or mkdir -p $XDG_STATE_HOME
 test -d $XDG_CACHE_HOME
 or mkdir -p $XDG_CACHE_HOME
 
-if type -q colima
-  set -gx TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE /var/run/docker.sock
-end
-
 if type -q vivid
-  set -gx LS_COLORS (vivid generate catppuccin-macchiato)
+  set -gx LS_COLORS (vivid generate lava)
 end
 
