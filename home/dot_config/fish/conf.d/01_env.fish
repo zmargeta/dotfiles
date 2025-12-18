@@ -22,7 +22,3 @@ or mkdir -p $XDG_STATE_HOME
 test -d $XDG_CACHE_HOME
 or mkdir -p $XDG_CACHE_HOME
 
-if type -q vivid
-  set -gx LS_COLORS (vivid generate lava)
-end
-

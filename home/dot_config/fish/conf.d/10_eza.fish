@@ -1,15 +1,5 @@
 if type -q eza
-  if type -q vivid
-    if type -q dark-notify
-      if test (dark-notify -e) = 'dark'
-        set -gx EZA_COLORS (vivid generate gruvbox-dark)
-      else
-        set -gx EZA_COLORS (vivid generate gruvbox-light)
-      end
-    else
-      set -gx EZA_COLORS (vivid generate gruvbox-dark)
-    end
-  end
+  set -gx EZA_CONFIG_DIR $XDG_CONFIG_HOME/eza
   set -gx TIME_STYLE default
   alias la 'eza --long --binary --all'
   alias ll 'eza --long --binary --git-ignore'
