@@ -44,6 +44,13 @@
           "value" : "/System/Applications/Mail.app"
         },
         {
+          "iconPath" : "compass.drawing",
+          "key" : "f",
+          "label" : "Fusion",
+          "type" : "application",
+          "value" : "~/Applications/Autodesk Fusion.app"
+        },
+        {
           "iconPath" : "keyboard",
           "key" : "i",
           "label" : "IDE",
@@ -63,6 +70,13 @@
           "label" : "Music",
           "type" : "application",
           "value" : "/System/Applications/Music.app"
+        },
+        {
+          "iconPath" : "printer.dotmatrix.inverse",
+          "key" : "s",
+          "label" : "Slicer",
+          "type" : "application",
+          "value" : "/Applications/PrusaSlicer.app"
         },
         {
           "iconPath" : "apple.terminal",
