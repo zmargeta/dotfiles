@@ -1,4 +1,4 @@
-local function setup_dashboard()
+local function setup_dashboard(mode)
   local alpha = require("alpha")
   local dashboard = require("alpha.themes.dashboard")
   local fortune = require("alpha.fortune")

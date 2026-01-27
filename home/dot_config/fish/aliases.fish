@@ -197,6 +197,9 @@
   if type -q ov
     alias less ov
   end
+  if type -q fd
+    alias fd 'fd --color never'
+  end
   if test $(uname) = "Darwin"
     if type -q brew
       abbr -ag br brew
