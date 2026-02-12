@@ -152,6 +152,8 @@ check_cleanup() {
 
 {{- if .personal }}
 {{- $casks = concat $casks (list
+    "autodesk-fusion"
+    "kicad"
     "prusaslicer" ) }}
 {{- else }}
 {{- $casks = concat $casks (list

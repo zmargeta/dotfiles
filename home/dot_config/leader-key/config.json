@@ -15,11 +15,25 @@
       "value" : "/Applications/Alfred 5.app"
     },
     {
-      "iconPath" : "keyboard",
+      "actions" : [
+        {
+          "iconPath" : "keyboard",
+          "key" : "i",
+          "label" : "Idea",
+          "type" : "application",
+          "value" : "~/Applications/IntelliJ IDEA.app"
+        },
+        {
+          "iconPath" : "keyboard",
+          "key" : "r",
+          "label" : "RustRover",
+          "type" : "application",
+          "value" : "~/Applications/RustRover.app"
+        }
+      ],
       "key" : "i",
       "label" : "IDE",
-      "type" : "application",
-      "value" : "~/Applications/IntelliJ IDEA.app"
+      "type" : "group"
     },
     {
       "actions" : [
@@ -33,6 +47,7 @@
         {
           "iconPath" : "video",
           "key" : "d",
+          "label" : "DaVinci",
           "type" : "application",
           "value" : "/Applications/DaVinci Resolve/DaVinci Resolve.app"
         },
@@ -51,11 +66,11 @@
           "value" : "~/Applications/Autodesk Fusion.app"
         },
         {
-          "iconPath" : "keyboard",
-          "key" : "i",
-          "label" : "IDE",
+          "iconPath" : "memorychip",
+          "key" : "k",
+          "label" : "KiCad",
           "type" : "application",
-          "value" : "~/Applications/IntelliJ IDEA Ultimate.app"
+          "value" : "/Applications/KiCad/KiCad.app"
         },
         {
           "iconPath" : "bubble.left.and.text.bubble.right",
