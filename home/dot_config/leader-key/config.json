@@ -66,13 +66,6 @@
           "value" : "~/Applications/Autodesk Fusion.app"
         },
         {
-          "iconPath" : "memorychip",
-          "key" : "k",
-          "label" : "KiCad",
-          "type" : "application",
-          "value" : "/Applications/KiCad/KiCad.app"
-        },
-        {
           "iconPath" : "bubble.left.and.text.bubble.right",
           "key" : "m",
           "label" : "Messages",
