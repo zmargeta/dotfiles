@@ -61,9 +61,9 @@
         {
           "iconPath" : "compass.drawing",
           "key" : "f",
-          "label" : "Fusion",
+          "label" : "SolidCraft",
           "type" : "application",
-          "value" : "~/Applications/Autodesk Fusion.app"
+          "value" : "/Applications/SolidCraft.app"
         },
         {
           "iconPath" : "bubble.left.and.text.bubble.right",
